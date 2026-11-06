@@ -1,0 +1,1 @@
+{"project":"gatehouse","deadline":"2026-11-11T13:59+09:00","phases":[{"id":"p1-core","state":"running"},{"id":"lane-ui","state":"pending"},{"id":"lane-integrations","state":"pending"},{"id":"record-tune-deploy-submit","state":"pending"}],"blockers":["Clocked account creation: person presses Continue with Google"]}
