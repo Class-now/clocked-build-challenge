@@ -3,7 +3,7 @@
     "PreToolUse": [
       {
         "matcher": "Bash|PowerShell|Write|Edit|WebFetch|mcp__.*",
-        "hooks": [{ "type": "command", "command": "gatehouse hook pre-tool", "timeout": 120 }]
+        "hooks": [{ "type": "command", "command": "gatehouse hook pre-tool", "timeout": 120, "onFailure": "block" }]
       }
     ],
     "PostToolUse": [

@@ -584,5 +584,6 @@ describe('examples', () => {
     const commands = ['PreToolUse', 'PostToolUse', 'Stop'].map((e) => settings.hooks[e][0].hooks[0]);
     expect(commands.map((c) => c.command)).toEqual(['gatehouse hook pre-tool', 'gatehouse hook post-tool', 'gatehouse hook stop']);
     expect(commands.every((c) => c.timeout > 90)).toBe(true);
+    expect(commands[0].onFailure).toBe('block');
   });
 });

@@ -28,7 +28,7 @@ Gatehouse has one gate for each: **action**, **content** and **report**. Each en
 | Guard `/injection` | Content gate | `injection` at or above 0.75 quarantines the text and the agent receives nothing. From 0.35 up to 0.75 holds it. Evidence passages are shown to the reviewer. |
 | Verify `/grounding` | Report gate | A claim the logs contradict refuses the report. An unsupported claim about tests, deploys, data or security holds it. An unsupported minor claim is only noted. |
 | Compare `/compare` | Report gate | A conflict between the brief and the changelog at or above 0.75 confidence refuses, and a weaker one holds. The conflicting passage is highlighted. |
-| Fill `/fill` | Any gate step ending in `HELD` or `REFUSED`, except content | Gives the person on call a card: summary, affected system, risk level, rollback, the decision needed. A confident "no rollback" adds a warning to a held action. It never changes the verdict. |
+| Fill `/fill` | Action and report gates, when the verdict is `HELD` or `REFUSED` | Gives the person on call a card: summary, affected system, risk level, rollback, the decision needed. A confident "no rollback" adds a warning to a held action. It never changes the verdict. |
 | Pipeline `/pipeline` | Content gate | Runs Guard and Protect as one request and one debit. `on_error: continue` means one failed step still returns the other. |
 
 Each field and why it is set is in [docs/how-it-uses-clocked.md](docs/how-it-uses-clocked.md).
@@ -42,7 +42,7 @@ The rules are in [`src/core/policy.ts`](src/core/policy.ts). An unsure answer or
 - **A failed helper holds only when the action depends on it.** If Rerank fails, every clause is applied. If Extract fails, URLs read in code still meet the allowlist, and a network or payment action holds. If Fill fails, there is no card and the verdict stays.
 - **Missing data holds.** A network action needs a known target. A payment needs a known amount.
 - **A benign detector authorises nothing.** An action must also be confidently in scope and must not have failed the allowlist.
-- **In Claude Code,** any failure of the service prints `ask`, never `allow`. A hook also gives up at its own deadline and asks, because Claude Code lets a tool proceed when a hook is killed by its timeout.
+- **In Claude Code,** any failure of the service prints `ask`, never `allow`. A hook also gives up at its own deadline and asks, because by default Claude Code lets a tool proceed when a hook times out. The sample settings add `"onFailure": "block"` for the case where the hook itself cannot run.
 
 ## Quick start
 
@@ -80,7 +80,7 @@ Make the `gatehouse` command available with `npm link` in this repository. Then,
     "PreToolUse": [
       {
         "matcher": "Bash|PowerShell|Write|Edit|WebFetch|mcp__.*",
-        "hooks": [{ "type": "command", "command": "gatehouse hook pre-tool", "timeout": 120 }]
+        "hooks": [{ "type": "command", "command": "gatehouse hook pre-tool", "timeout": 120, "onFailure": "block" }]
       }
     ],
     "PostToolUse": [
@@ -126,7 +126,7 @@ Calls are kept down in these ways:
 The limits of the design:
 
 - **A detector is not an enforcement boundary.** Gatehouse lowers risk; it does not contain an agent. Keep least privilege and sandboxing in place.
-- A hook that crashes lets the tool proceed. That is how Claude Code treats a failed hook, and only your own permission settings stop it.
+- A `pre-tool` hook that crashes or times out lets the tool proceed unless `"onFailure": "block"` is set, as it is in the sample. That setting needs Claude Code v2.1.295 or later. It has no effect on `Stop` hooks, so a `stop` hook that fails lets the agent stop.
 - `post-tool` runs after the tool. A held result has already reached the agent, with a warning. A refused result is replaced, but Claude Code ignores a replacement that does not fit a built-in tool's output shape, and the refusal reason quotes short evidence from the text.
 - `stop` blocks once in a row at most, by design, so an agent that repeats a false claim is not stopped twice. Its changelog is `git diff --stat`, which does not show committed or untracked work.
 - `allow` skips Claude Code's permission prompt. Your own deny and ask rules still apply.

@@ -58,7 +58,7 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 
 Also: `docs/how-it-uses-clocked.md` with one section per endpoint (request fields that matter and why), `.env.example` with `CLOCKED_API_KEY=` and `GATEHOUSE_LIVE=`, MIT `LICENSE` (holder "Gatehouse contributors"), `.github/workflows/ci.yml` running typecheck and test on Node 20 without any secret.
 
-- [ ] Every command in the README exists in `package.json`
-- [ ] No text in the repo claims results that have not been measured; placeholders stay as named above
+- [x] Every command in the README exists in `package.json`
+- [x] No text in the repo claims results that have not been measured; placeholders stay as named above
 
 Do NOT implement: web UI, HTTP API, deployment.

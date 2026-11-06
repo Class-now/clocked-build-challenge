@@ -5,7 +5,7 @@ import { appendAudit, auditResult } from './audit.js';
 import { loadConfig, toolListed } from './config.js';
 import { readTranscript } from './transcript.js';
 
-// Claude Code lets a tool proceed when a hook is killed by its timeout, so the gate must give up
+// By default Claude Code lets a tool proceed when a hook times out, so the gate must give up
 // first. The sample settings give each hook 120 seconds.
 export const HOOK_DEADLINE_MS = 90_000;
 
