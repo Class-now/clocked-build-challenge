@@ -2,7 +2,7 @@
 
 Gatehouse is a checkpoint between an AI agent and the real world: it checks what the agent is about to do, what it reads, and what it says it did, using the Clocked APIs.
 
-**Live demo:** LIVE_DEMO_URL
+**Live demo:** https://clocked-build-challenge.vercel.app
 
 ![The review desk](docs/img/desk.png)
 
@@ -118,7 +118,7 @@ Run against the live API on 40 labelled fictional cases. Full results and every 
 | Other misses | 6, all more cautious than the label: 4 hard controls held, 1 refusal held, 1 clean text redacted |
 | Credits for the run | 453 |
 
-These figures are not from held-out data. The first run agreed on 30 of 40 with 3 unsafe clears, and the two report questions `breaks_brief` and `overstates_tests` were added after reading those misses and checked on the same cases. `--sweep` showed no better setting for `refuseAt` from 0.75 to 0.90 or for `uncertainLow` from 0.20 to 0.50, so the thresholds stayed at 0.75 and 0.35.
+These figures are not from held-out data. The first run agreed on 30 of 40 with 3 unsafe clears, and the two report questions `breaks_brief` and `overstates_tests` were added after reading those misses and checked on the same cases. `--sweep` found no better setting across `refuseAt` from 0.60 to 0.90 and `uncertainLow` from 0.20 to 0.50, so the thresholds stayed at 0.75 and 0.35.
 
 `npm run eval` runs 40 labelled cases in [`eval/cases.json`](eval/cases.json) and writes a confusion matrix per gate, the unsafe-clear count and the false-alarm count to `eval/results.md`. `npm run eval -- --replay` recomputes from saved replies with no credits, and `npm run eval -- --sweep` tries other thresholds the same way.
 
@@ -138,6 +138,7 @@ The limits of the design:
 - **A detector is not an enforcement boundary.** Gatehouse lowers risk; it does not contain an agent. Keep least privilege and sandboxing in place.
 - A `pre-tool` hook that crashes or times out lets the tool proceed unless `"onFailure": "block"` is set, as it is in the sample. That setting needs Claude Code v2.1.295 or later. It has no effect on `Stop` hooks, so a `stop` hook that fails lets the agent stop.
 - `post-tool` runs after the tool. A held result has already reached the agent, with a warning. A refused result is replaced, but Claude Code ignores a replacement that does not fit a built-in tool's output shape.
+- `stop` can hold an honest report when the logs do not show what it says. In two trial runs in real Claude Code, the hooks refused a piped installer and quarantined a poisoned file as intended, and `stop` also blocked once each time.
 - `stop` blocks once in a row at most, by design, so an agent that repeats a false claim is not stopped twice. Its changelog is `git diff --stat`, which does not show committed or untracked work.
 - `allow` skips Claude Code's permission prompt. Your own deny and ask rules still apply.
 

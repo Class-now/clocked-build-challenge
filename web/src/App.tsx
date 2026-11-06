@@ -24,7 +24,7 @@ interface CustomRun { id: number; gate: GateKind; input: GateInput; result: Gate
 function runCost(result: GateResult | null): string {
   if (!result) return 'no run shown';
   const { credits, modelMs } = result.totals;
-  return `${credits} ${credits === 1 ? 'credit' : 'credits'} · ${modelMs} ms model time`;
+  return `${credits} ${credits === 1 ? 'credit' : 'credits'} · ${Math.round(modelMs)} ms model time`;
 }
 
 /** The policy goes by id, so a visitor cannot grow the request with a pack of their own. */

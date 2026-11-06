@@ -12,7 +12,7 @@ function failureLine(check: CheckResult): string {
 
 function cost(check: CheckResult): string | null {
   const parts: string[] = [];
-  if (check.modelMs !== undefined) parts.push(`${check.modelMs} ms`);
+  if (check.modelMs !== undefined) parts.push(`${Math.round(check.modelMs)} ms`);
   if (check.credits !== undefined) parts.push(`${check.credits} ${check.credits === 1 ? 'credit' : 'credits'}`);
   return parts.length > 0 ? parts.join(' · ') : null;
 }
