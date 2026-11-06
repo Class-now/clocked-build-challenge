@@ -51,6 +51,8 @@ Called by the action gate for outbound text, and by the content gate inside the 
 
 A result with findings must carry `anonymized_text` containing none of the found values, or the check fails closed.
 
+For an action declared outbound, Protect runs before Decide and Decide reads the redacted copy, so a message is judged as it would leave. An action only Decide classifies as outbound is redacted after that decision.
+
 ## Guard: `/injection`
 
 Called by the content gate inside the Pipeline.
