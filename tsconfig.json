@@ -23,6 +23,7 @@
     "scripts",
     "api",
     "vitest.config.ts",
-    "web/vite.config.ts"
+    "web/vite.config.ts",
+    "eval"
   ]
 }

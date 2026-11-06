@@ -27,13 +27,13 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 - Config: `gatehouse.config.json` in `cwd`, with `brief`, `policyPack` (built-in id or a path to JSON), `outboundTools`, `skipTools`. Sample in `examples/gatehouse.config.json`. Sample hook settings in `examples/claude-settings.json`. Missing config prints `ask` with a reason saying how to create one.
 - Short-circuit: tools in `skipTools` and read-only commands in a small built-in list (`ls`, `pwd`, `git status`, `git diff`) allow without a call, so credits are not spent on them. Each run appends one JSON line to `.gatehouse/audit.jsonl` with time, gate, verdict, reasons and credits, with no raw text.
 
-- [ ] Tests feed real-shaped hook events through a fake transport and assert the printed JSON for each verdict, service failure, missing config, `stop_hook_active`, and skip list
+- [x] Tests feed real-shaped hook events through a fake transport and assert the printed JSON for each verdict, service failure, missing config, `stop_hook_active`, and skip list
 
 ### Task 2: A simulated agent run
 
 `gatehouse demo` plays a recorded fictional agent session through the gates with `replayTransport` from `recordings/*.json`. It works with no API key and prints a readable terminal transcript: what the agent tried, each verdict and reason. If recordings are missing it says to run `npm run record`. Add it as `npm run demo`.
 
-- [ ] Test with a fixture recording covering output and the missing-recordings message
+- [x] Test with a fixture recording covering output and the missing-recordings message
 
 ### Task 3: Eval harness
 
@@ -41,7 +41,7 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 
 `eval/run.ts` (`npm run eval`): runs every case with the live transport, saves replies to `eval/recordings/`, writes `eval/results.md` with overall agreement, a confusion matrix per gate, the unsafe-clear count (expected HELD or REFUSED but CLEARED), the false-alarm count (expected CLEARED but REFUSED), total credits, and a list of disagreements. `--replay` recomputes from saved replies with no credits. `--sweep` tries `refuseAt` and `uncertainLow` values from saved replies, without new calls, and prints a table. It is not run in this plan.
 
-- [ ] Tests cover the metric calculation and replay mode with a small fixture
+- [x] Tests cover the metric calculation and replay mode with a small fixture
 
 ### Task 4: README, how-it-works, CI
 
@@ -58,7 +58,7 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 
 Also: `docs/how-it-uses-clocked.md` with one section per endpoint (request fields that matter and why), `.env.example` with `CLOCKED_API_KEY=` and `GATEHOUSE_LIVE=`, MIT `LICENSE` (holder "Gatehouse contributors"), `.github/workflows/ci.yml` running typecheck and test on Node 20 without any secret.
 
-- [ ] Every command in the README exists in `package.json`
-- [ ] No text in the repo claims results that have not been measured; placeholders stay as named above
+- [x] Every command in the README exists in `package.json`
+- [x] No text in the repo claims results that have not been measured; placeholders stay as named above
 
 Do NOT implement: web UI, HTTP API, deployment.

@@ -6,6 +6,7 @@ Contest record (status, brief, submission) lives in `C:\For Claude\contest-pm\co
 
 ## Layout
 - `src/core/` types, Clocked client, verdict policy, the three gates
+- `src/cli/` CLI and Claude Code hooks; `eval/` labelled cases; `web/`, `api/`, `src/server/` the review desk
 - `src/scenarios/` fictional demo scenarios and policy packs
 - `recordings/` responses recorded from the live API
 - `docs/plans/` implementation plans; `docs/pm/` PM progress
