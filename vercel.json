@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build:web",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/*.ts": { "maxDuration": 120 }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}

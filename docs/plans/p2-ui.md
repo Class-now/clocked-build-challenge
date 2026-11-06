@@ -28,7 +28,7 @@ Vite + React + TypeScript in `web/`, built to `dist/`. Vercel Node functions in 
   - Results strip `raw` fields whose content would duplicate personal data the visitor did not type: keep `raw` for scenarios, drop it for custom input.
   - Never logs input text or the key.
 
-- [ ] Handler tests cover each status above with a fake transport
+- [x] Handler tests cover each status above with a fake transport
 
 ### Task 2: The desk
 
@@ -49,8 +49,8 @@ On a narrow screen the queue becomes a horizontal scroller at the top. Keyboard:
 
 The first scenario in the queue, `a-defender`, is selected on load so the first paint shows a `REFUSED` stamp and evidence.
 
-- [ ] Selecting a scenario in recorded mode shows its result with no network call beyond the first load
-- [ ] Component tests with Testing Library cover: rendering each verdict, span highlight on hover, failed check rendering, redacted forward text, audit log persisting
+- [x] Selecting a scenario in recorded mode shows its result with no network call beyond the first load
+- [x] Component tests with Testing Library cover: rendering each verdict, span highlight on hover, failed check rendering, redacted forward text, audit log persisting
 
 ### Task 3: Try your own, and every empty and failure state
 
@@ -59,7 +59,7 @@ The first scenario in the queue, `a-defender`, is selected on load so the first 
 - Live mode failure states, each with a plain sentence and a way forward: `live_off` and `out_of_credits` switch to recorded mode and say why, `rate_limited` says when to retry, 413 names the field that is too long, a network error offers retry. A missing recording shows "not recorded yet" with a live button.
 - A short "How the verdict is made" panel, collapsed by default, listing the thresholds imported from `THRESHOLDS` and the rules: uncertain never clears, a failed safety check holds, a benign detector verdict alone authorises nothing.
 
-- [ ] Tests cover each failure code and the panel's values matching `THRESHOLDS`
-- [ ] `npm run build:web` passes, and `vercel.json` routes `/api/*` to the functions and everything else to `dist/index.html`
+- [x] Tests cover each failure code and the panel's values matching `THRESHOLDS`
+- [x] `npm run build:web` passes, and `vercel.json` routes `/api/*` to the functions and everything else to `dist/index.html`
 
 Do NOT implement: hooks, CLI, eval harness, README, deployment commands. Do not add accounts, analytics, or external calls from the browser other than `/api`.
