@@ -41,7 +41,7 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 
 `eval/run.ts` (`npm run eval`): runs every case with the live transport, saves replies to `eval/recordings/`, writes `eval/results.md` with overall agreement, a confusion matrix per gate, the unsafe-clear count (expected HELD or REFUSED but CLEARED), the false-alarm count (expected CLEARED but REFUSED), total credits, and a list of disagreements. `--replay` recomputes from saved replies with no credits. `--sweep` tries `refuseAt` and `uncertainLow` values from saved replies, without new calls, and prints a table. It is not run in this plan.
 
-- [ ] Tests cover the metric calculation and replay mode with a small fixture
+- [x] Tests cover the metric calculation and replay mode with a small fixture
 
 ### Task 4: README, how-it-works, CI
 

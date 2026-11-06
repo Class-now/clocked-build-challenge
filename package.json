@@ -12,7 +12,8 @@
     "test": "vitest run",
     "record": "tsx scripts/record.ts",
     "gatehouse": "tsx src/cli/gatehouse.ts",
-    "demo": "tsx src/cli/gatehouse.ts demo"
+    "demo": "tsx src/cli/gatehouse.ts demo",
+    "eval": "tsx eval/run.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
