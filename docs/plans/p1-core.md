@@ -106,7 +106,7 @@ export function callKey(c: ClockedCall): string; // sha256 of endpoint + stable 
 - `liveTransport` runs one request at a time through an in-process promise queue, generates one `Idempotency-Key` per logical call and reuses it on retry, retries 429 and 5xx and network errors with bounded exponential backoff (at most `maxRetries`, default 4, honouring `Retry-After` when present), and has a 60 s timeout per attempt. It never throws: a failure returns `{ok:false,status,error}`. It never logs the key.
 - `replayTransport` returns `{ok:false,status:0,error:'no recording'}` on a miss.
 
-- [ ] Tests with a fake fetch cover: success with cost headers, 429 then success using the same idempotency key, 402 without retry, timeout or network failure returning `ok:false`, serial execution (two concurrent calls never overlap), record then replay round trip
+- [x] Tests with a fake fetch cover: success with cost headers, 429 then success using the same idempotency key, 402 without retry, timeout or network failure returning `ok:false`, serial execution (two concurrent calls never overlap), record then replay round trip
 
 ### Task 3: Verdict policy (pure)
 
