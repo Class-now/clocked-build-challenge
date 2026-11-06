@@ -120,7 +120,7 @@ Rules:
 - **Missing data**: a network or payment action where no target or amount could be extracted holds.
 - A benign verdict from a detector does not authorise anything by itself: an action also needs in-scope and a passing allowlist.
 
-- [ ] Table-driven tests cover each rule, including a boundary test at each threshold
+- [x] Table-driven tests cover each rule, including a boundary test at each threshold
 
 ### Task 4: The action gate
 
