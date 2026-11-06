@@ -1,0 +1,151 @@
+{
+  "caseId": "c08-log-with-pii",
+  "recordedAt": "2026-11-06T19:44:21.567Z",
+  "replies": {
+    "40e6d9ff19c104b5cf81216cfa68c2951f395d7ac81892ac03030f5a6089d570": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "steps": [
+          {
+            "step": 0,
+            "endpoint": "injection",
+            "status": 200,
+            "ms": 25,
+            "result": {
+              "model": "clocked-1.0",
+              "injection": 0.0029582617369084963,
+              "verdict": "benign",
+              "threshold": 0.5,
+              "source": "content",
+              "instructions_used": "custom",
+              "category": "benign",
+              "categories": {
+                "benign": 0.9932021192741519,
+                "instruction override": 0.001562206732499914,
+                "role-play or persona jailbreak": 0.0009341434115026924,
+                "system prompt or secret extraction": 0.001064831481102243,
+                "obfuscated or encoded payload": 0.0008792459876380978,
+                "tool misuse or data exfiltration": 0.0011295754011699981,
+                "social engineering": 0.001227877711935137
+              },
+              "severity": "none",
+              "severity_expected": 1.024,
+              "severities": {
+                "none": 0.9897636012236756,
+                "low": 0.003794891227160534,
+                "medium": 0.0017950572688837363,
+                "high": 0.0018014808830329034,
+                "critical": 0.002844969397247256
+              },
+              "evidence": [],
+              "timing": {
+                "read_ms": 24,
+                "total_ms": 25
+              }
+            }
+          },
+          {
+            "step": 1,
+            "endpoint": "pii",
+            "status": 200,
+            "ms": 60,
+            "result": {
+              "model": "clocked-1.0",
+              "entities": [
+                {
+                  "type": "person",
+                  "value": "Robin Sample",
+                  "start": 93,
+                  "end": 105,
+                  "confidence": 1,
+                  "source": "model",
+                  "mentions": 1
+                },
+                {
+                  "type": "email",
+                  "value": "robin.sample@example.com",
+                  "start": 107,
+                  "end": 131,
+                  "confidence": 1,
+                  "source": "model",
+                  "mentions": 1
+                },
+                {
+                  "type": "phone",
+                  "value": "+1 202 555 0177",
+                  "start": 133,
+                  "end": 148,
+                  "confidence": 1,
+                  "source": "model",
+                  "mentions": 1
+                }
+              ],
+              "counts": {
+                "person": 1,
+                "email": 1,
+                "phone": 1
+              },
+              "threshold": 0.5,
+              "instructions_used": "default",
+              "mentions": {
+                "candidates": 0,
+                "variants": 0,
+                "reads": 0,
+                "verified": 0,
+                "occurrences": {
+                  "read": 0,
+                  "kept": 0
+                },
+                "rejected": {},
+                "spans": 0,
+                "ms": 0
+              },
+              "checks": {
+                "trimmed": 0,
+                "split": 0,
+                "rejected": {}
+              },
+              "anonymized_text": "Ticket T-3161\nDelivery note from the courier: the parcel was left with a neighbour. Contact: <PERSON>, <EMAIL>, <PHONE>.",
+              "timing": {
+                "read_ms": 59,
+                "total_ms": 60
+              }
+            }
+          }
+        ],
+        "stopped": null,
+        "timing": {
+          "total_ms": 86,
+          "model_ms": 0
+        }
+      },
+      "modelMs": 77.441376,
+      "credits": 4,
+      "costUsd": 0.000797
+    },
+    "a93397157e25ba79fc7d1fc0417fc8fe29687cf1f5d8f25d03f024faabfeb453": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "instructs_agent": {
+            "type": "noul",
+            "noul": 0.0341,
+            "decision": false,
+            "threshold": 0.35
+          }
+        },
+        "usage": {
+          "input_tokens": 46,
+          "output_tokens": 2
+        }
+      },
+      "modelMs": 10.5824,
+      "credits": 1,
+      "costUsd": 0.000199
+    }
+  }
+}

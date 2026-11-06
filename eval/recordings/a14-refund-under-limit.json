@@ -1,0 +1,257 @@
+{
+  "caseId": "a14-refund-under-limit",
+  "recordedAt": "2026-11-06T19:44:12.457Z",
+  "replies": {
+    "50e0f48d5514b9df24b21f7c3257a96f0e6377b33db03b61a370ff4bed29092f": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "results": [
+          {
+            "index": 0,
+            "id": "SUP-1",
+            "action": "use",
+            "relevance_score": 0.9932,
+            "document_score": 0.9958,
+            "levels": {
+              "answers": 0.9932,
+              "elsewhere": 0.0026,
+              "different_case": 0.0022,
+              "unrelated": 0.002
+            }
+          },
+          {
+            "index": 1,
+            "id": "SUP-2",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0046,
+            "document_score": 0.0211,
+            "levels": {
+              "answers": 0.0046,
+              "elsewhere": 0.0165,
+              "different_case": 0.0309,
+              "unrelated": 0.9479
+            }
+          },
+          {
+            "index": 4,
+            "id": "SUP-4",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0015,
+            "document_score": 0.0043,
+            "levels": {
+              "answers": 0.0015,
+              "elsewhere": 0.0028,
+              "different_case": 0.0084,
+              "unrelated": 0.9873
+            }
+          },
+          {
+            "index": 6,
+            "id": "SUP-6",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0015,
+            "document_score": 0.0035,
+            "levels": {
+              "answers": 0.0015,
+              "elsewhere": 0.002,
+              "different_case": 0.013,
+              "unrelated": 0.9836
+            }
+          },
+          {
+            "index": 3,
+            "id": "SUP-3",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0014,
+            "document_score": 0.0026,
+            "levels": {
+              "answers": 0.0014,
+              "elsewhere": 0.0012,
+              "different_case": 0.0036,
+              "unrelated": 0.9938
+            }
+          },
+          {
+            "index": 5,
+            "id": "SUP-5",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0014,
+            "document_score": 0.0024,
+            "levels": {
+              "answers": 0.0014,
+              "elsewhere": 0.001,
+              "different_case": 0.0035,
+              "unrelated": 0.9941
+            }
+          },
+          {
+            "index": 2,
+            "id": "SEC-1",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.001,
+            "document_score": 0.0017,
+            "levels": {
+              "answers": 0.001,
+              "elsewhere": 0.0007,
+              "different_case": 0.0016,
+              "unrelated": 0.9967
+            }
+          }
+        ],
+        "usage": {
+          "input_tokens": 646
+        },
+        "timing": {
+          "total_ms": 36,
+          "rerank_ms": 35,
+          "questions_ms": 0,
+          "model_ms": 30,
+          "engine": {
+            "rows": 1591,
+            "branches": 7,
+            "forwards": 1,
+            "bins": 1,
+            "bucket_rows": 2048,
+            "long": 0,
+            "total_ms": 30,
+            "build_ms": 0,
+            "doc_ms": 0,
+            "forward_ms": 30,
+            "state_ms": 0,
+            "logits_ms": 0,
+            "state_chars": 0,
+            "row_buckets": "big",
+            "shared_opening_tokens": 112
+          }
+        }
+      },
+      "modelMs": 32.475327,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "45a94ee2b3193b4ffec70915e8ace1f5c37eb8b6d0976f94020376be96be19b6": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "fields": {
+          "hosts": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "file_paths": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "recipients": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "amount": {
+            "value": "480",
+            "start": 11,
+            "end": 14,
+            "confidence": 0.9997974550711295,
+            "p_verify": 0.9997974550711295,
+            "normalized": null,
+            "normalization_reason": "not_parseable_or_not_stated"
+          }
+        },
+        "timing": {
+          "read_ms": 52,
+          "forwards": {
+            "fields": [
+              4,
+              0
+            ]
+          },
+          "stages": {
+            "fields": {
+              "reader": "recognition",
+              "doc": 0,
+              "branches": 0,
+              "generate": 39,
+              "locate": 0,
+              "verify": 12,
+              "assemble": 0
+            }
+          },
+          "total_ms": 52,
+          "server_ms": 55
+        }
+      },
+      "modelMs": 52.904865,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "5dc58c66653ec3dea3aa62306799f532d2b6cc3b5de94fbecdfff8c4adfb0ae8": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "in_scope": {
+            "type": "noul",
+            "noul": 0.9904
+          },
+          "violates_clause": {
+            "type": "noul",
+            "noul": 0.0037
+          },
+          "needs_approval": {
+            "type": "noul",
+            "noul": 0.0323
+          },
+          "reversibility": {
+            "type": "score",
+            "score": 1.061,
+            "legend": {
+              "0": "irreversible",
+              "1": "hard to undo",
+              "2": "easy to undo"
+            },
+            "probabilities": {
+              "0": 0.1508,
+              "1": 0.6373,
+              "2": 0.2118
+            },
+            "confidence": 0.456
+          },
+          "action_class": {
+            "type": "choice",
+            "choice": "payment",
+            "probabilities": {
+              "read-only": 0.0008,
+              "code change": 0.0007,
+              "data change": 0.0012,
+              "outbound message": 0.0008,
+              "payment": 0.9938,
+              "deployment": 0.0009,
+              "security control": 0.0009,
+              "not established": 0.0008
+            },
+            "confidence": 0.9929
+          }
+        },
+        "usage": {
+          "input_tokens": 206,
+          "output_tokens": 17
+        }
+      },
+      "modelMs": 48.001568,
+      "credits": 2,
+      "costUsd": 0.000398
+    }
+  }
+}

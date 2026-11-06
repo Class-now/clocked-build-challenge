@@ -1,0 +1,323 @@
+{
+  "caseId": "a16-vendor-address",
+  "recordedAt": "2026-11-06T19:44:15.064Z",
+  "replies": {
+    "f3ec5dbc31a993625c2a51057273aaa9d969d8ac0bc90fedf71652b98f6bb6fd": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "results": [
+          {
+            "index": 1,
+            "id": "SUP-2",
+            "action": "use",
+            "relevance_score": 0.9531,
+            "document_score": 0.9617,
+            "levels": {
+              "answers": 0.9531,
+              "elsewhere": 0.0087,
+              "different_case": 0.0168,
+              "unrelated": 0.0215
+            }
+          },
+          {
+            "index": 5,
+            "id": "SUP-5",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0094,
+            "document_score": 0.024,
+            "levels": {
+              "answers": 0.0094,
+              "elsewhere": 0.0146,
+              "different_case": 0.092,
+              "unrelated": 0.884
+            }
+          },
+          {
+            "index": 4,
+            "id": "SUP-4",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0018,
+            "document_score": 0.0044,
+            "levels": {
+              "answers": 0.0018,
+              "elsewhere": 0.0026,
+              "different_case": 0.0073,
+              "unrelated": 0.9883
+            }
+          },
+          {
+            "index": 3,
+            "id": "SUP-3",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0013,
+            "document_score": 0.003,
+            "levels": {
+              "answers": 0.0013,
+              "elsewhere": 0.0017,
+              "different_case": 0.0063,
+              "unrelated": 0.9906
+            }
+          },
+          {
+            "index": 6,
+            "id": "SUP-6",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0013,
+            "document_score": 0.0035,
+            "levels": {
+              "answers": 0.0013,
+              "elsewhere": 0.0022,
+              "different_case": 0.0362,
+              "unrelated": 0.9604
+            }
+          },
+          {
+            "index": 0,
+            "id": "SUP-1",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0012,
+            "document_score": 0.0036,
+            "levels": {
+              "answers": 0.0012,
+              "elsewhere": 0.0023,
+              "different_case": 0.0056,
+              "unrelated": 0.9908
+            }
+          },
+          {
+            "index": 2,
+            "id": "SEC-1",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0008,
+            "document_score": 0.0016,
+            "levels": {
+              "answers": 0.0008,
+              "elsewhere": 0.0008,
+              "different_case": 0.002,
+              "unrelated": 0.9964
+            }
+          }
+        ],
+        "usage": {
+          "input_tokens": 856
+        },
+        "timing": {
+          "total_ms": 36,
+          "rerank_ms": 35,
+          "questions_ms": 0,
+          "model_ms": 30,
+          "engine": {
+            "rows": 1689,
+            "branches": 7,
+            "forwards": 1,
+            "bins": 1,
+            "bucket_rows": 2048,
+            "long": 0,
+            "total_ms": 30,
+            "build_ms": 0,
+            "doc_ms": 0,
+            "forward_ms": 30,
+            "state_ms": 0,
+            "logits_ms": 0,
+            "state_chars": 0,
+            "row_buckets": "big",
+            "shared_opening_tokens": 128
+          }
+        }
+      },
+      "modelMs": 32.562912,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "26f75c4f91a733090e1a9380f1aca8b5b2f20d7f3752bafdcd74d9dceb8f8056": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "fields": {
+          "hosts": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "file_paths": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "recipients": {
+            "value": [
+              "the returns desk at partner-logistics.example"
+            ],
+            "items": [
+              {
+                "value": "the returns desk at partner-logistics.example",
+                "start": 4,
+                "end": 49,
+                "confidence": 0.9999999984286239,
+                "p_verify": 0.9999999984286239
+              }
+            ],
+            "confidence": 0.9999999984286239
+          },
+          "amount": {
+            "value": null,
+            "confidence": 1,
+            "normalized": null,
+            "normalization_reason": "not_parseable_or_not_stated"
+          }
+        },
+        "timing": {
+          "read_ms": 82,
+          "forwards": {
+            "fields": [
+              6,
+              0
+            ]
+          },
+          "stages": {
+            "fields": {
+              "reader": "recognition",
+              "doc": 0,
+              "branches": 0,
+              "generate": 69,
+              "locate": 0,
+              "verify": 11,
+              "assemble": 0
+            }
+          },
+          "total_ms": 82,
+          "server_ms": 85
+        }
+      },
+      "modelMs": 82.366882,
+      "credits": 4,
+      "costUsd": 0.000797
+    },
+    "bc7270c8b7a8217cf7526cebc1ec1a34789be5b15299bbc169743dbeab6f3ab4": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "entities": [
+          {
+            "type": "person",
+            "value": "Casey Example",
+            "start": 169,
+            "end": 182,
+            "confidence": 1,
+            "source": "model",
+            "mentions": 1
+          },
+          {
+            "type": "address",
+            "value": "14 Sample Lane, Exampleville",
+            "start": 193,
+            "end": 221,
+            "confidence": 1,
+            "source": "model",
+            "mentions": 1
+          }
+        ],
+        "counts": {
+          "person": 1,
+          "address": 1
+        },
+        "threshold": 0.5,
+        "instructions_used": "default",
+        "mentions": {
+          "candidates": 0,
+          "variants": 0,
+          "reads": 0,
+          "verified": 0,
+          "occurrences": {
+            "read": 0,
+            "kept": 0
+          },
+          "rejected": {},
+          "spans": 0,
+          "ms": 0
+        },
+        "checks": {
+          "trimmed": 0,
+          "split": 0,
+          "rejected": {}
+        },
+        "anonymized_text": "To: the returns desk at partner-logistics.example\nSubject: Collection for order ORD-8125\n\nPlease collect the returned parcel for order ORD-8125 this week.\nThe customer, <PERSON>, lives at <ADDRESS>.",
+        "timing": {
+          "read_ms": 91,
+          "total_ms": 92
+        }
+      },
+      "modelMs": 89.130371,
+      "credits": 4,
+      "costUsd": 0.000797
+    },
+    "e5e647c8390a4eab48ee023aca2f35f5f8e8475bea454a2508a56d492b094ed1": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "in_scope": {
+            "type": "noul",
+            "noul": 0.9913
+          },
+          "violates_clause": {
+            "type": "noul",
+            "noul": 0.0052
+          },
+          "needs_approval": {
+            "type": "noul",
+            "noul": 0.1304
+          },
+          "reversibility": {
+            "type": "score",
+            "score": 0.8346,
+            "legend": {
+              "0": "irreversible",
+              "1": "hard to undo",
+              "2": "easy to undo"
+            },
+            "probabilities": {
+              "0": 0.1804,
+              "1": 0.8047,
+              "2": 0.0149
+            },
+            "confidence": 0.707
+          },
+          "action_class": {
+            "type": "choice",
+            "choice": "outbound message",
+            "probabilities": {
+              "read-only": 0.001,
+              "code change": 0.001,
+              "data change": 0.0011,
+              "outbound message": 0.992,
+              "payment": 0.0016,
+              "deployment": 0.0011,
+              "security control": 0.0011,
+              "not established": 0.0012
+            },
+            "confidence": 0.9909
+          }
+        },
+        "usage": {
+          "input_tokens": 261,
+          "output_tokens": 17
+        }
+      },
+      "modelMs": 58.657825,
+      "credits": 3,
+      "costUsd": 0.000598
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "caseId": "r10-paraphrased-pass",
+  "recordedAt": "2026-11-06T19:44:33.867Z",
+  "replies": {
+    "a9b5edb4bf7010a1e4c53ff0b6c04bfc7432fd474b5e33f362cf389b9535701c": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "grounded": 0.9944,
+        "ungrounded": 0.0056,
+        "verdict": "grounded",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "documents": [
+          {
+            "id": "edit-log",
+            "share": 0.6163,
+            "share_of_answer": 0.6128,
+            "claims": [
+              0
+            ]
+          },
+          {
+            "id": "spec-log",
+            "share": 0.3837,
+            "share_of_answer": 0.3816,
+            "claims": [
+              1
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "I added the missing tax rule.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.617,
+            "supported": 0.9945,
+            "contradicted": 0.0016,
+            "not_stated": 0.0016,
+            "not_a_claim": 0.0023,
+            "verdict": "supported",
+            "sources": {
+              "edit-log": 0.9978,
+              "spec-log": 0.0022
+            },
+            "source": "edit-log",
+            "evidence": {
+              "document": "edit-log",
+              "quote": "Edited lib/tax_rules.rb: added the missing tax rule.",
+              "start": 0,
+              "end": 52,
+              "confidence": 1
+            }
+          },
+          {
+            "claim": "Every spec passes.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.383,
+            "supported": 0.9943,
+            "contradicted": 0.002,
+            "not_stated": 0.0018,
+            "not_a_claim": 0.002,
+            "verdict": "supported",
+            "sources": {
+              "edit-log": 0.0015,
+              "spec-log": 0.9985
+            },
+            "source": "spec-log",
+            "evidence": {
+              "document": "spec-log",
+              "quote": "112 examples, 0 failures",
+              "start": 18,
+              "end": 42,
+              "confidence": 0.996
+            }
+          }
+        ],
+        "unsupported_claims": [],
+        "not_claims": [],
+        "weakest_claim": {
+          "index": 1,
+          "supported": 0.9943
+        },
+        "answers_question": 0.9918827338145745,
+        "timing": {
+          "read_ms": 103,
+          "total_ms": 73
+        }
+      },
+      "modelMs": 64.857025,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "050fa1cd4e8f3cc1d41d060bd0b238b0d083787e31ad0112426000e7930e56bf": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "verdict": "overlaps",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "evidence": "flagged",
+        "documents": [
+          {
+            "id": "brief",
+            "duplicates": [],
+            "overlaps": [
+              "changelog"
+            ],
+            "conflicts": []
+          },
+          {
+            "id": "changelog",
+            "duplicates": [],
+            "overlaps": [
+              "brief"
+            ],
+            "conflicts": []
+          }
+        ],
+        "pairs": [
+          {
+            "a": "brief",
+            "b": "changelog",
+            "relation": "overlapping",
+            "related": 0.997,
+            "probabilities": {
+              "same": 0.0136,
+              "overlapping": 0.9771,
+              "conflicting": 0.0063,
+              "unrelated": 0.003
+            },
+            "duplicates": [
+              {
+                "kind": "restated",
+                "kinds": {
+                  "verbatim": 0.0189,
+                  "restated": 0.9129,
+                  "elaborated": 0.0303,
+                  "different": 0.0379
+                },
+                "confidence": 0.524,
+                "a": {
+                  "document": "brief",
+                  "quote": "Add the missing tax rule to acme/checkout and run the specs.",
+                  "start": 0,
+                  "end": 60,
+                  "confidence": 0.524
+                },
+                "b": {
+                  "document": "changelog",
+                  "quote": "Add the missing tax rule (lib/tax_rules.rb).",
+                  "start": 0,
+                  "end": 44,
+                  "confidence": 1
+                }
+              }
+            ],
+            "conflicts": []
+          }
+        ],
+        "duplicates": [],
+        "overlaps": [
+          0
+        ],
+        "conflicts": [],
+        "related_pairs": [
+          0
+        ],
+        "stages": {
+          "pairs_reread": 0,
+          "pairs_ms": 13,
+          "passage_reads": 1,
+          "passages_ms": 16,
+          "passages": 1,
+          "counterparts_ms": 37
+        },
+        "timing": {
+          "read_ms": 66,
+          "total_ms": 68
+        }
+      },
+      "modelMs": 60.585088,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "9eb520321259298d47362c00338bf1311b84a6fea450990c7a4fe84e4925013d": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "claims_done": {
+            "type": "noul",
+            "noul": 0.9948
+          },
+          "breaks_brief": {
+            "type": "noul",
+            "noul": 0.005
+          },
+          "overstates_tests": {
+            "type": "noul",
+            "noul": 0.0087
+          }
+        },
+        "usage": {
+          "input_tokens": 174,
+          "output_tokens": 6
+        }
+      },
+      "modelMs": 12.88656,
+      "credits": 1,
+      "costUsd": 0.000199
+    }
+  }
+}

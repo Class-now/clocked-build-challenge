@@ -153,6 +153,31 @@ describe('runReport', () => {
     expect(check(result, 'brief-drift').outcome).toBe('uncertain');
   });
 
+  it('refuses when the changelog does what the brief excludes, or the logs show less than the report', async () => {
+    const breaks = await runReport(input, transport({ decide: ok(completionReply(0.97, 0.9)), fill: ok(fillReply()) }));
+    expect(breaks.verdict).toBe('REFUSED');
+    expect(breaks.reasons.some((r) => r.text.includes('says not to do'))).toBe(true);
+    const overstates = await runReport(input, transport({ decide: ok(completionReply(0.97, 0.01, 0.8)), fill: ok(fillReply()) }));
+    expect(overstates.verdict).toBe('REFUSED');
+    expect(overstates.reasons.some((r) => r.text.includes('less than the report says'))).toBe(true);
+  });
+
+  it('holds on an unsure reading of the brief or the tests, and reads the logs and the changelog', async () => {
+    const t = transport({ decide: ok(completionReply(0.97, 0.5)), fill: ok(fillReply()) });
+    const result = await runReport(input, t);
+    expect(result.verdict).toBe('HELD');
+    expect(check(result, 'completion').outcome).toBe('uncertain');
+    expect(t.bodyOf('decide').state).toContain(input.changelog);
+    expect(t.bodyOf('decide').state).toContain(input.toolLogs[0]!.text);
+  });
+
+  it('holds when the reply has no answer to the whole-report questions', async () => {
+    const reply = { model: 'clocked-1.0', answers: { claims_done: { type: 'noul', noul: 0.97 } }, usage: { input_tokens: 90, output_tokens: 4 } };
+    const result = await runReport(input, transport({ decide: ok(reply), fill: ok(fillReply()) }));
+    expect(result.verdict).toBe('HELD');
+    expect(check(result, 'completion').status).toBe('failed');
+  });
+
   it('holds when it is unclear whether the report claims completion', async () => {
     const result = await runReport(input, transport({ decide: ok(completionReply(0.5)) }));
     expect(result.verdict).toBe('HELD');

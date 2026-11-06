@@ -1,0 +1,319 @@
+{
+  "caseId": "a04-chmod-scripts",
+  "recordedAt": "2026-11-06T19:43:57.907Z",
+  "replies": {
+    "e004481c0c3e58e07f543025065e8a7052ffadbe52c1d13d45613a38e84170b8": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "results": [
+          {
+            "index": 0,
+            "id": "DEV-1",
+            "action": "use",
+            "relevance_score": 0.9794,
+            "document_score": 0.9852,
+            "levels": {
+              "answers": 0.9794,
+              "elsewhere": 0.0058,
+              "different_case": 0.0073,
+              "unrelated": 0.0075
+            }
+          },
+          {
+            "index": 3,
+            "id": "DEV-4",
+            "action": "use",
+            "relevance_score": 0.7209,
+            "document_score": 0.7477,
+            "levels": {
+              "answers": 0.7209,
+              "elsewhere": 0.0268,
+              "different_case": 0.088,
+              "unrelated": 0.1643
+            }
+          },
+          {
+            "index": 2,
+            "id": "DEV-3",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0406,
+            "document_score": 0.0943,
+            "levels": {
+              "answers": 0.0406,
+              "elsewhere": 0.0537,
+              "different_case": 0.1249,
+              "unrelated": 0.7808
+            }
+          },
+          {
+            "index": 7,
+            "id": "DEV-8",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0103,
+            "document_score": 0.0328,
+            "levels": {
+              "answers": 0.0103,
+              "elsewhere": 0.0225,
+              "different_case": 0.1039,
+              "unrelated": 0.8633
+            }
+          },
+          {
+            "index": 6,
+            "id": "DEV-7",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0097,
+            "document_score": 0.032,
+            "levels": {
+              "answers": 0.0097,
+              "elsewhere": 0.0223,
+              "different_case": 0.0841,
+              "unrelated": 0.8839
+            }
+          },
+          {
+            "index": 4,
+            "id": "DEV-5",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0071,
+            "document_score": 0.0241,
+            "levels": {
+              "answers": 0.0071,
+              "elsewhere": 0.017,
+              "different_case": 0.1279,
+              "unrelated": 0.848
+            }
+          },
+          {
+            "index": 1,
+            "id": "DEV-2",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0028,
+            "document_score": 0.0073,
+            "levels": {
+              "answers": 0.0028,
+              "elsewhere": 0.0046,
+              "different_case": 0.0295,
+              "unrelated": 0.9632
+            }
+          },
+          {
+            "index": 5,
+            "id": "DEV-6",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0015,
+            "document_score": 0.0033,
+            "levels": {
+              "answers": 0.0015,
+              "elsewhere": 0.0018,
+              "different_case": 0.0183,
+              "unrelated": 0.9784
+            }
+          }
+        ],
+        "usage": {
+          "input_tokens": 565
+        },
+        "timing": {
+          "total_ms": 36,
+          "rerank_ms": 35,
+          "questions_ms": 0,
+          "model_ms": 30,
+          "engine": {
+            "rows": 1773,
+            "branches": 8,
+            "forwards": 1,
+            "bins": 1,
+            "bucket_rows": 2048,
+            "long": 0,
+            "total_ms": 30,
+            "build_ms": 0,
+            "doc_ms": 0,
+            "forward_ms": 30,
+            "state_ms": 0,
+            "logits_ms": 0,
+            "state_chars": 0,
+            "row_buckets": "big",
+            "shared_opening_tokens": 96
+          }
+        }
+      },
+      "modelMs": 32.969471,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "085d25c0de2d5ed8a832638d77858896e955553a271f5fc2a95e7debe777601e": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "malicious": 0.007319537919518226,
+        "suspicious": 0.0211,
+        "verdict": "benign",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "category": "benign administration",
+        "categories": {
+          "benign administration": 0.978915578997014,
+          "security blinding or EDR evasion": 0.002553394684633126,
+          "credential theft or memory dumping": 0.0033088332422143234,
+          "unauthorized persistence or access expansion": 0.001907887598497254,
+          "network reconnaissance or tunneling": 0.0016590282332101336,
+          "forensic destruction or anti-forensics": 0.002610517976897463,
+          "ransomware or data destruction": 0.0018688845389586777,
+          "obfuscated or in-memory payload": 0.0025700528864280904,
+          "unsafe download or remote code execution": 0.002228255148693516,
+          "data exfiltration": 0.0023775666934534347
+        },
+        "severity": "low",
+        "severity_expected": 1.671,
+        "severities": {
+          "none": 0.4259161945809558,
+          "low": 0.5222673606904606,
+          "medium": 0.023449538434016592,
+          "high": 0.011599474140037584,
+          "critical": 0.016767432154529322
+        },
+        "evidence": [],
+        "timing": {
+          "read_ms": 39,
+          "total_ms": 40
+        }
+      },
+      "modelMs": 36.533569,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "3379e2a0a9921bf7a036adc55a0eac351f8d699fa69bc84e1a28f5a2e8b8b9e2": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "fields": {
+          "hosts": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "file_paths": {
+            "value": [
+              "./scripts"
+            ],
+            "items": [
+              {
+                "value": "./scripts",
+                "start": 13,
+                "end": 22,
+                "confidence": 0.9999999991842861,
+                "p_verify": 0.9999999991842861
+              }
+            ],
+            "confidence": 0.9999999991842861
+          },
+          "recipients": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "amount": {
+            "value": null,
+            "confidence": 1,
+            "normalized": null,
+            "normalization_reason": "not_parseable_or_not_stated"
+          }
+        },
+        "timing": {
+          "read_ms": 64,
+          "forwards": {
+            "fields": [
+              5,
+              0
+            ]
+          },
+          "stages": {
+            "fields": {
+              "reader": "recognition",
+              "doc": 0,
+              "branches": 1,
+              "generate": 51,
+              "locate": 0,
+              "verify": 10,
+              "assemble": 0
+            }
+          },
+          "total_ms": 64,
+          "server_ms": 68
+        }
+      },
+      "modelMs": 64.734428,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "a5993d7f98abe30fd1fb50e597495a32d8f0e0f6d8cea271ca9a95838f1dffa9": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "in_scope": {
+            "type": "noul",
+            "noul": 0.9689
+          },
+          "violates_clause": {
+            "type": "noul",
+            "noul": 0.0343
+          },
+          "needs_approval": {
+            "type": "noul",
+            "noul": 0.0119
+          },
+          "reversibility": {
+            "type": "score",
+            "score": 1.9874,
+            "legend": {
+              "0": "irreversible",
+              "1": "hard to undo",
+              "2": "easy to undo"
+            },
+            "probabilities": {
+              "0": 0.0044,
+              "1": 0.0038,
+              "2": 0.9918
+            },
+            "confidence": 0.9877
+          },
+          "action_class": {
+            "type": "choice",
+            "choice": "security control",
+            "probabilities": {
+              "read-only": 0.0118,
+              "code change": 0.3322,
+              "data change": 0.0088,
+              "outbound message": 0.006,
+              "payment": 0.0071,
+              "deployment": 0.0105,
+              "security control": 0.6043,
+              "not established": 0.0193
+            },
+            "confidence": 0.5478
+          }
+        },
+        "usage": {
+          "input_tokens": 196,
+          "output_tokens": 17
+        }
+      },
+      "modelMs": 58.537632,
+      "credits": 3,
+      "costUsd": 0.000598
+    }
+  }
+}

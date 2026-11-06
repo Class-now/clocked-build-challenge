@@ -1,6 +1,6 @@
 {
   "scenarioId": "a-deploy-friday",
-  "recordedAt": "2026-11-06T19:39:39.857Z",
+  "recordedAt": "2026-11-06T19:43:45.465Z",
   "result": {
     "gate": "action",
     "verdict": "HELD",
@@ -37,7 +37,7 @@
         "effect": "Only DEV-1, DEV-3 went into the later checks and the reasons.",
         "score": 0.6792,
         "spans": [],
-        "modelMs": 31.649887,
+        "modelMs": 32.141632,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -160,7 +160,7 @@
             "total_ms": 35,
             "rerank_ms": 34,
             "questions_ms": 0,
-            "model_ms": 31,
+            "model_ms": 30,
             "engine": {
               "rows": 1877,
               "branches": 8,
@@ -168,10 +168,10 @@
               "bins": 1,
               "bucket_rows": 2048,
               "long": 0,
-              "total_ms": 31,
+              "total_ms": 30,
               "build_ms": 0,
               "doc_ms": 0,
-              "forward_ms": 30,
+              "forward_ms": 29,
               "state_ms": 0,
               "logits_ms": 0,
               "state_chars": 0,
@@ -208,7 +208,7 @@
             "label": "host"
           }
         ],
-        "modelMs": 68.241699,
+        "modelMs": 67.621948,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -246,7 +246,7 @@
             }
           },
           "timing": {
-            "read_ms": 68,
+            "read_ms": 67,
             "forwards": {
               "fields": [
                 5,
@@ -257,15 +257,15 @@
               "fields": {
                 "reader": "recognition",
                 "doc": 0,
-                "branches": 1,
+                "branches": 0,
                 "generate": 54,
                 "locate": 0,
                 "verify": 11,
                 "assemble": 0
               }
             },
-            "total_ms": 68,
-            "server_ms": 72
+            "total_ms": 67,
+            "server_ms": 70
           }
         }
       },
@@ -279,7 +279,7 @@
         "effect": "Held: This action is not clearly part of the approved work (in scope 0.56).",
         "score": 0.5578,
         "spans": [],
-        "modelMs": 58.764416,
+        "modelMs": 58.065983,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -352,8 +352,8 @@
         "summary": "Risk reads as medium and the affected system as acme/checkout.",
         "effect": "Gave the reviewer a card and warned that there is no rollback.",
         "spans": [],
-        "modelMs": 253.899901,
-        "credits": 11,
+        "modelMs": 249.161762,
+        "credits": 10,
         "raw": {
           "model": "clocked-1.0",
           "fields": {
@@ -395,9 +395,9 @@
             }
           },
           "timing": {
-            "read_ms": 98,
-            "generate_ms": 248,
-            "total_ms": 265,
+            "read_ms": 95,
+            "generate_ms": 239,
+            "total_ms": 256,
             "source_states": 1,
             "source_prefills": 0,
             "shared_source_tokens": 256,
@@ -408,8 +408,8 @@
       }
     ],
     "totals": {
-      "modelMs": 412.555903,
-      "credits": 19,
+      "modelMs": 406.991325,
+      "credits": 18,
       "failedChecks": 0
     },
     "reviewCard": {
@@ -545,7 +545,7 @@
           "total_ms": 35,
           "rerank_ms": 34,
           "questions_ms": 0,
-          "model_ms": 31,
+          "model_ms": 30,
           "engine": {
             "rows": 1877,
             "branches": 8,
@@ -553,10 +553,10 @@
             "bins": 1,
             "bucket_rows": 2048,
             "long": 0,
-            "total_ms": 31,
+            "total_ms": 30,
             "build_ms": 0,
             "doc_ms": 0,
-            "forward_ms": 30,
+            "forward_ms": 29,
             "state_ms": 0,
             "logits_ms": 0,
             "state_chars": 0,
@@ -565,7 +565,7 @@
           }
         }
       },
-      "modelMs": 31.649887,
+      "modelMs": 32.141632,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -608,7 +608,7 @@
           }
         },
         "timing": {
-          "read_ms": 68,
+          "read_ms": 67,
           "forwards": {
             "fields": [
               5,
@@ -619,18 +619,18 @@
             "fields": {
               "reader": "recognition",
               "doc": 0,
-              "branches": 1,
+              "branches": 0,
               "generate": 54,
               "locate": 0,
               "verify": 11,
               "assemble": 0
             }
           },
-          "total_ms": 68,
-          "server_ms": 72
+          "total_ms": 67,
+          "server_ms": 70
         }
       },
-      "modelMs": 68.241699,
+      "modelMs": 67.621948,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -688,7 +688,7 @@
           "output_tokens": 17
         }
       },
-      "modelMs": 58.764416,
+      "modelMs": 58.065983,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -736,9 +736,9 @@
           }
         },
         "timing": {
-          "read_ms": 98,
-          "generate_ms": 248,
-          "total_ms": 265,
+          "read_ms": 95,
+          "generate_ms": 239,
+          "total_ms": 256,
           "source_states": 1,
           "source_prefills": 0,
           "shared_source_tokens": 256,
@@ -746,9 +746,9 @@
           "engine": "unified"
         }
       },
-      "modelMs": 253.899901,
-      "credits": 11,
-      "costUsd": 0.002191
+      "modelMs": 249.161762,
+      "credits": 10,
+      "costUsd": 0.001992
     }
   }
 }

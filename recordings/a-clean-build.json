@@ -1,6 +1,6 @@
 {
   "scenarioId": "a-clean-build",
-  "recordedAt": "2026-11-06T19:39:36.000Z",
+  "recordedAt": "2026-11-06T19:43:41.434Z",
   "result": {
     "gate": "action",
     "verdict": "CLEARED",
@@ -16,7 +16,7 @@
         "effect": "Only DEV-1, DEV-4, DEV-8 went into the later checks and the reasons.",
         "score": 0.9731,
         "spans": [],
-        "modelMs": 31.370432,
+        "modelMs": 31.806463,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -135,10 +135,10 @@
             "input_tokens": 461
           },
           "timing": {
-            "total_ms": 36,
+            "total_ms": 35,
             "rerank_ms": 34,
             "questions_ms": 0,
-            "model_ms": 31,
+            "model_ms": 30,
             "engine": {
               "rows": 1797,
               "branches": 8,
@@ -146,10 +146,10 @@
               "bins": 1,
               "bucket_rows": 2048,
               "long": 0,
-              "total_ms": 31,
+              "total_ms": 30,
               "build_ms": 0,
               "doc_ms": 0,
-              "forward_ms": 30,
+              "forward_ms": 29,
               "state_ms": 0,
               "logits_ms": 0,
               "state_chars": 0,
@@ -169,7 +169,7 @@
         "effect": "No objection, but this alone does not authorise the action.",
         "score": 0.004006969459267706,
         "spans": [],
-        "modelMs": 34.967777,
+        "modelMs": 36.097473,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -202,8 +202,8 @@
           },
           "evidence": [],
           "timing": {
-            "read_ms": 37,
-            "total_ms": 38
+            "read_ms": 38,
+            "total_ms": 39
           }
         }
       },
@@ -216,7 +216,7 @@
         "summary": "Found 0 host(s), 1 path(s), 0 recipient(s) and no amount.",
         "effect": "Every host found is on the allowlist.",
         "spans": [],
-        "modelMs": 52.799904,
+        "modelMs": 51.845535,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -254,7 +254,7 @@
             }
           },
           "timing": {
-            "read_ms": 52,
+            "read_ms": 51,
             "forwards": {
               "fields": [
                 4,
@@ -266,14 +266,14 @@
                 "reader": "recognition",
                 "doc": 0,
                 "branches": 1,
-                "generate": 40,
+                "generate": 39,
                 "locate": 0,
-                "verify": 9,
+                "verify": 10,
                 "assemble": 0
               }
             },
-            "total_ms": 52,
-            "server_ms": 56
+            "total_ms": 51,
+            "server_ms": 54
           }
         }
       },
@@ -287,7 +287,7 @@
         "effect": "In scope, and no applicable clause objects.",
         "score": 0.9437,
         "spans": [],
-        "modelMs": 47.667934,
+        "modelMs": 47.503777,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -363,7 +363,7 @@
       }
     ],
     "totals": {
-      "modelMs": 166.806047,
+      "modelMs": 167.25324799999999,
       "credits": 9,
       "failedChecks": 0
     }
@@ -489,10 +489,10 @@
           "input_tokens": 461
         },
         "timing": {
-          "total_ms": 36,
+          "total_ms": 35,
           "rerank_ms": 34,
           "questions_ms": 0,
-          "model_ms": 31,
+          "model_ms": 30,
           "engine": {
             "rows": 1797,
             "branches": 8,
@@ -500,10 +500,10 @@
             "bins": 1,
             "bucket_rows": 2048,
             "long": 0,
-            "total_ms": 31,
+            "total_ms": 30,
             "build_ms": 0,
             "doc_ms": 0,
-            "forward_ms": 30,
+            "forward_ms": 29,
             "state_ms": 0,
             "logits_ms": 0,
             "state_chars": 0,
@@ -512,7 +512,7 @@
           }
         }
       },
-      "modelMs": 31.370432,
+      "modelMs": 31.806463,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -550,11 +550,11 @@
         },
         "evidence": [],
         "timing": {
-          "read_ms": 37,
-          "total_ms": 38
+          "read_ms": 38,
+          "total_ms": 39
         }
       },
-      "modelMs": 34.967777,
+      "modelMs": 36.097473,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -597,7 +597,7 @@
           }
         },
         "timing": {
-          "read_ms": 52,
+          "read_ms": 51,
           "forwards": {
             "fields": [
               4,
@@ -609,17 +609,17 @@
               "reader": "recognition",
               "doc": 0,
               "branches": 1,
-              "generate": 40,
+              "generate": 39,
               "locate": 0,
-              "verify": 9,
+              "verify": 10,
               "assemble": 0
             }
           },
-          "total_ms": 52,
-          "server_ms": 56
+          "total_ms": 51,
+          "server_ms": 54
         }
       },
-      "modelMs": 52.799904,
+      "modelMs": 51.845535,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -677,7 +677,7 @@
           "output_tokens": 17
         }
       },
-      "modelMs": 47.667934,
+      "modelMs": 47.503777,
       "credits": 2,
       "costUsd": 0.000398
     }

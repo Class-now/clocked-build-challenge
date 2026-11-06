@@ -1,0 +1,325 @@
+{
+  "caseId": "a02-rm-build",
+  "recordedAt": "2026-11-06T19:43:55.601Z",
+  "replies": {
+    "98c7a260aa2ed858ab417d9a76664b91f34e89ec37cd3869cc751aa91936f473": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "results": [
+          {
+            "index": 0,
+            "id": "DEV-1",
+            "action": "use",
+            "relevance_score": 0.9884,
+            "document_score": 0.9926,
+            "levels": {
+              "answers": 0.9884,
+              "elsewhere": 0.0042,
+              "different_case": 0.0036,
+              "unrelated": 0.0038
+            }
+          },
+          {
+            "index": 7,
+            "id": "DEV-8",
+            "action": "use",
+            "relevance_score": 0.9869,
+            "document_score": 0.9912,
+            "levels": {
+              "answers": 0.9869,
+              "elsewhere": 0.0043,
+              "different_case": 0.0042,
+              "unrelated": 0.0045
+            }
+          },
+          {
+            "index": 3,
+            "id": "DEV-4",
+            "action": "use",
+            "relevance_score": 0.961,
+            "document_score": 0.972,
+            "levels": {
+              "answers": 0.961,
+              "elsewhere": 0.0111,
+              "different_case": 0.0138,
+              "unrelated": 0.0142
+            }
+          },
+          {
+            "index": 2,
+            "id": "DEV-3",
+            "action": "use",
+            "relevance_score": 0.7756,
+            "document_score": 0.8148,
+            "levels": {
+              "answers": 0.7756,
+              "elsewhere": 0.0392,
+              "different_case": 0.0883,
+              "unrelated": 0.0969
+            }
+          },
+          {
+            "index": 6,
+            "id": "DEV-7",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.014,
+            "document_score": 0.0361,
+            "levels": {
+              "answers": 0.014,
+              "elsewhere": 0.0221,
+              "different_case": 0.1372,
+              "unrelated": 0.8267
+            }
+          },
+          {
+            "index": 4,
+            "id": "DEV-5",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0126,
+            "document_score": 0.0441,
+            "levels": {
+              "answers": 0.0126,
+              "elsewhere": 0.0316,
+              "different_case": 0.1249,
+              "unrelated": 0.831
+            }
+          },
+          {
+            "index": 1,
+            "id": "DEV-2",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0064,
+            "document_score": 0.0163,
+            "levels": {
+              "answers": 0.0064,
+              "elsewhere": 0.0099,
+              "different_case": 0.1029,
+              "unrelated": 0.8808
+            }
+          },
+          {
+            "index": 5,
+            "id": "DEV-6",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0028,
+            "document_score": 0.0069,
+            "levels": {
+              "answers": 0.0028,
+              "elsewhere": 0.0041,
+              "different_case": 0.0568,
+              "unrelated": 0.9363
+            }
+          }
+        ],
+        "usage": {
+          "input_tokens": 493
+        },
+        "timing": {
+          "total_ms": 37,
+          "rerank_ms": 36,
+          "questions_ms": 0,
+          "model_ms": 30,
+          "engine": {
+            "rows": 1829,
+            "branches": 8,
+            "forwards": 1,
+            "bins": 1,
+            "bucket_rows": 2048,
+            "long": 0,
+            "total_ms": 30,
+            "build_ms": 0,
+            "doc_ms": 0,
+            "forward_ms": 30,
+            "state_ms": 0,
+            "logits_ms": 0,
+            "state_chars": 0,
+            "row_buckets": "big",
+            "shared_opening_tokens": 80
+          }
+        }
+      },
+      "modelMs": 33.238945,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "ca0e6e5eadcc84308faef123018b6574431220efb8beeeaaf833c51fd10a2066": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "malicious": 0.0047676896374120314,
+        "suspicious": 0.0246,
+        "verdict": "benign",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "category": "benign administration",
+        "categories": {
+          "benign administration": 0.9753509359044099,
+          "security blinding or EDR evasion": 0.002560132723283855,
+          "credential theft or memory dumping": 0.0035613721050475567,
+          "unauthorized persistence or access expansion": 0.0017352139229943862,
+          "network reconnaissance or tunneling": 0.002328187004817989,
+          "forensic destruction or anti-forensics": 0.004311144806830142,
+          "ransomware or data destruction": 0.0027441367626426646,
+          "obfuscated or in-memory payload": 0.0026930858529434962,
+          "unsafe download or remote code execution": 0.002338729289955187,
+          "data exfiltration": 0.0023770616270748133
+        },
+        "severity": "low",
+        "severity_expected": 1.634,
+        "severities": {
+          "none": 0.44517272159962445,
+          "low": 0.5094036496855929,
+          "medium": 0.021755501224813203,
+          "high": 0.013886518239177054,
+          "critical": 0.009781609250792389
+        },
+        "evidence": [],
+        "timing": {
+          "read_ms": 38,
+          "total_ms": 39
+        }
+      },
+      "modelMs": 36.228703,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "0df9b7036192ddae3c113685599acb637196699e652405fa65a48ef27dc87647": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "fields": {
+          "hosts": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "file_paths": {
+            "value": [
+              "./build",
+              "./coverage"
+            ],
+            "items": [
+              {
+                "value": "./build",
+                "start": 7,
+                "end": 14,
+                "confidence": 0.9999999985779531,
+                "p_verify": 0.9999999985779531
+              },
+              {
+                "value": "./coverage",
+                "start": 15,
+                "end": 25,
+                "confidence": 0.9999999989426893,
+                "p_verify": 0.9999999989426893
+              }
+            ],
+            "confidence": 0.9999999985779531
+          },
+          "recipients": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "amount": {
+            "value": null,
+            "confidence": 1,
+            "normalized": null,
+            "normalization_reason": "not_parseable_or_not_stated"
+          }
+        },
+        "timing": {
+          "read_ms": 56,
+          "forwards": {
+            "fields": [
+              4,
+              0
+            ]
+          },
+          "stages": {
+            "fields": {
+              "reader": "recognition",
+              "doc": 0,
+              "branches": 1,
+              "generate": 42,
+              "locate": 0,
+              "verify": 11,
+              "assemble": 0
+            }
+          },
+          "total_ms": 56,
+          "server_ms": 59
+        }
+      },
+      "modelMs": 56.298687,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "008d573a944d03d33e33d1a5e8631bbf64eabf7d42991a87ac72840a5182db27": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "in_scope": {
+            "type": "noul",
+            "noul": 0.99
+          },
+          "violates_clause": {
+            "type": "noul",
+            "noul": 0.012
+          },
+          "needs_approval": {
+            "type": "noul",
+            "noul": 0.0738
+          },
+          "reversibility": {
+            "type": "score",
+            "score": 0.572,
+            "legend": {
+              "0": "irreversible",
+              "1": "hard to undo",
+              "2": "easy to undo"
+            },
+            "probabilities": {
+              "0": 0.4439,
+              "1": 0.5402,
+              "2": 0.0159
+            },
+            "confidence": 0.3102
+          },
+          "action_class": {
+            "type": "choice",
+            "choice": "code change",
+            "probabilities": {
+              "read-only": 0.002,
+              "code change": 0.9813,
+              "data change": 0.0025,
+              "outbound message": 0.0023,
+              "payment": 0.0019,
+              "deployment": 0.0039,
+              "security control": 0.0021,
+              "not established": 0.004
+            },
+            "confidence": 0.9786
+          }
+        },
+        "usage": {
+          "input_tokens": 236,
+          "output_tokens": 17
+        }
+      },
+      "modelMs": 48.169727,
+      "credits": 2,
+      "costUsd": 0.000398
+    }
+  }
+}

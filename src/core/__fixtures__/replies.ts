@@ -166,8 +166,8 @@ export function instructsReply(noul: number, threshold = 0.35): unknown {
   return { model: 'clocked-1.0', answers: { instructs_agent: { type: 'noul', noul, decision: noul >= threshold, threshold } }, usage: { input_tokens: 90, output_tokens: 4 } };
 }
 
-export function completionReply(noul = 0.97): unknown {
-  return { model: 'clocked-1.0', answers: { claims_done: { type: 'noul', noul } }, usage: { input_tokens: 90, output_tokens: 4 } };
+export function completionReply(noul = 0.97, breaks = 0.01, overstates = 0.01): unknown {
+  return { model: 'clocked-1.0', answers: { claims_done: { type: 'noul', noul }, breaks_brief: { type: 'noul', noul: breaks }, overstates_tests: { type: 'noul', noul: overstates } }, usage: { input_tokens: 90, output_tokens: 4 } };
 }
 
 export interface ClaimSpec {

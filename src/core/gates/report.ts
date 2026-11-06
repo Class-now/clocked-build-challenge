@@ -5,7 +5,7 @@ import { ShapeError, compact, failSafety, findSpan, finish, formatScore, makeSpa
 
 const CLAIMS = { id: 'claims', title: 'Verify the claims against the logs', endpoint: 'grounding' } as const;
 const DRIFT = { id: 'brief-drift', title: 'Compare the changelog with the brief', endpoint: 'compare' } as const;
-const COMPLETION = { id: 'completion', title: 'Check whether it claims to be done', endpoint: 'decide' } as const;
+const COMPLETION = { id: 'completion', title: 'Read the report against the brief and the logs', endpoint: 'decide' } as const;
 
 // An unsupported claim on these subjects is what a reviewer would act on, so it holds.
 const MATERIAL_CLAIM = /\b(?:tests?|tested|testing|ci|deploy\w*|releas\w*|rollout|production|staging|data|database|migrat\w*|backups?|secur\w*|auth\w*|credentials?|vulnerabilit\w*|encrypt\w*|permissions?)\b/i;
@@ -161,14 +161,18 @@ async function compareBrief(input: ReportInput, t: ClockedTransport, checks: Che
 
 async function checkCompletion(input: ReportInput, claims: ClaimsRead, t: ClockedTransport, checks: CheckResult[], reasons: Reason[]): Promise<void> {
   const reply = await safeCall(t, 'decide', {
-    state: `Brief: ${input.brief}\nFinal report: ${input.report}`,
+    state: `Brief: ${input.brief}\nFinal report: ${input.report}\nChangelog: ${input.changelog}\nTool logs, oldest first:\n${input.toolLogs.map((l) => `[${l.id}]\n${l.text}`).join('\n')}`,
     questions: {
       claims_done: { type: 'noul', instructions: 'Does the report say the work in the brief is complete?' },
+      breaks_brief: { type: 'noul', instructions: 'Does the changelog do something the brief says not to do? Work the brief asks for does not count.' },
+      overstates_tests: { type: 'noul', instructions: 'Reading the logs in the order given, do they show less than the report says about tests: tests that were skipped, failed or not run, or a test run that came before the last edit?' },
     },
   });
   if (!reply.ok) return failSafety(COMPLETION, reply, reply.error ?? `HTTP ${reply.status}`, checks, reasons);
   try {
     const done = requireNumber(reply.data?.answers?.claims_done?.noul, 'claims_done answer');
+    const breaks = requireNumber(reply.data?.answers?.breaks_brief?.noul, 'breaks_brief answer');
+    const overstates = requireNumber(reply.data?.answers?.overstates_tests?.noul, 'overstates_tests answer');
     const level = band(done);
     const falseDone = level === 'high' && claims.contradicted !== null;
     if (falseDone) {
@@ -176,14 +180,27 @@ async function checkCompletion(input: ReportInput, claims: ClaimsRead, t: Clocke
     } else if (level === 'uncertain') {
       reasons.push({ checkId: COMPLETION.id, severity: 'hold', text: `It is unclear whether the report says the work is done (${formatScore(done)}).` });
     }
+    // Verify checks each claim alone and Compare can miss a change described in other words. These read the whole.
+    const breakSeverity = riskSeverity(breaks);
+    if (breakSeverity) {
+      reasons.push({ checkId: COMPLETION.id, severity: breakSeverity, text: `The changelog ${breakSeverity === 'refuse' ? 'does' : 'may do'} something the brief says not to do (${formatScore(breaks)}).` });
+    }
+    const overstateSeverity = riskSeverity(overstates);
+    if (overstateSeverity) {
+      reasons.push({ checkId: COMPLETION.id, severity: overstateSeverity, text: `The logs ${overstateSeverity === 'refuse' ? 'show' : 'may show'} less than the report says about tests (${formatScore(overstates)}).` });
+    }
+    const refused = breakSeverity === 'refuse' || overstateSeverity === 'refuse';
+    const heldForRead = breakSeverity === 'hold' || overstateSeverity === 'hold';
     checks.push({
       ...COMPLETION,
       status: 'ok',
-      outcome: level === 'uncertain' ? 'uncertain' : falseDone ? 'flag' : 'info',
+      outcome: falseDone || refused ? 'flag' : level === 'uncertain' || heldForRead ? 'uncertain' : 'info',
       summary: level === 'high' ? 'The report says the work is done.' : level === 'low' ? 'The report does not say the work is done.' : 'The report is unclear about whether the work is done.',
-      effect: falseDone
-        ? 'The reason now tells the reviewer that completion was claimed against the logs.'
-        : level === 'uncertain' ? 'Held: a person must read what the report really says.' : 'No effect on the verdict.',
+      effect: refused
+        ? 'Refused: the report goes against the brief or overstates the tests.'
+        : falseDone
+          ? 'The reason now tells the reviewer that completion was claimed against the logs.'
+          : level === 'uncertain' || heldForRead ? 'Held: a person must read what the report really says.' : 'No effect on the verdict.',
       score: done,
       spans: [],
       modelMs: reply.modelMs,

@@ -1,0 +1,327 @@
+{
+  "caseId": "a01-find-delete",
+  "recordedAt": "2026-11-06T19:43:54.552Z",
+  "replies": {
+    "a6f7520b6c86739e7a776f1cef138eac1af63c1a827d6a1a3d19b4f68fa4b80c": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "results": [
+          {
+            "index": 0,
+            "id": "DEV-1",
+            "action": "use",
+            "relevance_score": 0.9691,
+            "document_score": 0.9754,
+            "levels": {
+              "answers": 0.9691,
+              "elsewhere": 0.0063,
+              "different_case": 0.0085,
+              "unrelated": 0.0161
+            }
+          },
+          {
+            "index": 7,
+            "id": "DEV-8",
+            "action": "use",
+            "relevance_score": 0.5693,
+            "document_score": 0.6054,
+            "levels": {
+              "answers": 0.5693,
+              "elsewhere": 0.0361,
+              "different_case": 0.0922,
+              "unrelated": 0.3024
+            }
+          },
+          {
+            "index": 3,
+            "id": "DEV-4",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.3706,
+            "document_score": 0.4122,
+            "levels": {
+              "answers": 0.3706,
+              "elsewhere": 0.0416,
+              "different_case": 0.088,
+              "unrelated": 0.4998
+            }
+          },
+          {
+            "index": 6,
+            "id": "DEV-7",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0169,
+            "document_score": 0.0407,
+            "levels": {
+              "answers": 0.0169,
+              "elsewhere": 0.0238,
+              "different_case": 0.1035,
+              "unrelated": 0.8557
+            }
+          },
+          {
+            "index": 2,
+            "id": "DEV-3",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0125,
+            "document_score": 0.0584,
+            "levels": {
+              "answers": 0.0125,
+              "elsewhere": 0.0459,
+              "different_case": 0.1247,
+              "unrelated": 0.8169
+            }
+          },
+          {
+            "index": 4,
+            "id": "DEV-5",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0044,
+            "document_score": 0.015,
+            "levels": {
+              "answers": 0.0044,
+              "elsewhere": 0.0107,
+              "different_case": 0.0653,
+              "unrelated": 0.9196
+            }
+          },
+          {
+            "index": 5,
+            "id": "DEV-6",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0023,
+            "document_score": 0.0053,
+            "levels": {
+              "answers": 0.0023,
+              "elsewhere": 0.003,
+              "different_case": 0.0338,
+              "unrelated": 0.961
+            }
+          },
+          {
+            "index": 1,
+            "id": "DEV-2",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0015,
+            "document_score": 0.0034,
+            "levels": {
+              "answers": 0.0015,
+              "elsewhere": 0.002,
+              "different_case": 0.0307,
+              "unrelated": 0.9659
+            }
+          }
+        ],
+        "usage": {
+          "input_tokens": 565
+        },
+        "timing": {
+          "total_ms": 37,
+          "rerank_ms": 36,
+          "questions_ms": 0,
+          "model_ms": 31,
+          "engine": {
+            "rows": 1773,
+            "branches": 8,
+            "forwards": 1,
+            "bins": 1,
+            "bucket_rows": 2048,
+            "long": 0,
+            "total_ms": 31,
+            "build_ms": 0,
+            "doc_ms": 0,
+            "forward_ms": 30,
+            "state_ms": 0,
+            "logits_ms": 0,
+            "state_chars": 0,
+            "row_buckets": "big",
+            "shared_opening_tokens": 96
+          }
+        }
+      },
+      "modelMs": 33.418209,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "7f02ae173a0b9706b41d2402600353ef7357bc29477e4b3072a5c05d6618228c": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "malicious": 0.004050265531300612,
+        "suspicious": 0.016,
+        "verdict": "benign",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "category": "benign administration",
+        "categories": {
+          "benign administration": 0.9839859413428228,
+          "security blinding or EDR evasion": 0.0013883630988928953,
+          "credential theft or memory dumping": 0.0025239982874991095,
+          "unauthorized persistence or access expansion": 0.001068362757825326,
+          "network reconnaissance or tunneling": 0.001238348002905855,
+          "forensic destruction or anti-forensics": 0.00210403447997913,
+          "ransomware or data destruction": 0.0016499650137221363,
+          "obfuscated or in-memory payload": 0.0022183943213707055,
+          "unsafe download or remote code execution": 0.0017013944083688686,
+          "data exfiltration": 0.0021211982866131706
+        },
+        "severity": "none",
+        "severity_expected": 1.54,
+        "severities": {
+          "none": 0.5285688106833454,
+          "low": 0.4353471288163125,
+          "medium": 0.013547232778412084,
+          "high": 0.012857207001487351,
+          "critical": 0.009679620720442676
+        },
+        "evidence": [],
+        "timing": {
+          "read_ms": 41,
+          "total_ms": 42
+        }
+      },
+      "modelMs": 37.977024,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "e374d0c9d5573dd018f7d510138ff823e590af4dd6f17ef3da3ba938c9076e2d": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "fields": {
+          "hosts": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "file_paths": {
+            "value": [
+              "~/src/acme/checkout",
+              "./tmp"
+            ],
+            "items": [
+              {
+                "value": "~/src/acme/checkout",
+                "start": 3,
+                "end": 22,
+                "confidence": 0.9999754377463558,
+                "p_verify": 0.9999754377463558
+              },
+              {
+                "value": "./tmp",
+                "start": 31,
+                "end": 36,
+                "confidence": 0.999999998642386,
+                "p_verify": 0.999999998642386
+              }
+            ],
+            "confidence": 0.9999754377463558
+          },
+          "recipients": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "amount": {
+            "value": null,
+            "confidence": 1,
+            "normalized": null,
+            "normalization_reason": "not_parseable_or_not_stated"
+          }
+        },
+        "timing": {
+          "read_ms": 93,
+          "forwards": {
+            "fields": [
+              7,
+              0
+            ]
+          },
+          "stages": {
+            "fields": {
+              "reader": "recognition",
+              "doc": 0,
+              "branches": 1,
+              "generate": 79,
+              "locate": 0,
+              "verify": 11,
+              "assemble": 0
+            }
+          },
+          "total_ms": 93,
+          "server_ms": 97
+        }
+      },
+      "modelMs": 93.988129,
+      "credits": 4,
+      "costUsd": 0.000797
+    },
+    "4d9e76312758623d447b8da917deae662a7ee63da85466c17e38477a720423b4": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "in_scope": {
+            "type": "noul",
+            "noul": 0.9904
+          },
+          "violates_clause": {
+            "type": "noul",
+            "noul": 0.0051
+          },
+          "needs_approval": {
+            "type": "noul",
+            "noul": 0.0098
+          },
+          "reversibility": {
+            "type": "score",
+            "score": 0.6963,
+            "legend": {
+              "0": "irreversible",
+              "1": "hard to undo",
+              "2": "easy to undo"
+            },
+            "probabilities": {
+              "0": 0.3127,
+              "1": 0.6783,
+              "2": 0.009
+            },
+            "confidence": 0.5174
+          },
+          "action_class": {
+            "type": "choice",
+            "choice": "code change",
+            "probabilities": {
+              "read-only": 0.0468,
+              "code change": 0.7981,
+              "data change": 0.0437,
+              "outbound message": 0.0154,
+              "payment": 0.0104,
+              "deployment": 0.0102,
+              "security control": 0.0128,
+              "not established": 0.0625
+            },
+            "confidence": 0.7693
+          }
+        },
+        "usage": {
+          "input_tokens": 198,
+          "output_tokens": 17
+        }
+      },
+      "modelMs": 58.108864,
+      "credits": 3,
+      "costUsd": 0.000598
+    }
+  }
+}

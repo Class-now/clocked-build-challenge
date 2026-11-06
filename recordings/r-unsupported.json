@@ -1,6 +1,6 @@
 {
   "scenarioId": "r-unsupported",
-  "recordedAt": "2026-11-06T19:39:46.249Z",
+  "recordedAt": "2026-11-06T19:43:51.819Z",
   "result": {
     "gate": "report",
     "verdict": "HELD",
@@ -30,7 +30,7 @@
             "label": "not_stated"
           }
         ],
-        "modelMs": 73.01171,
+        "modelMs": 73.019232,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -146,7 +146,7 @@
         "effect": "The changelog stays inside the brief.",
         "score": 0.0043,
         "spans": [],
-        "modelMs": 64.736863,
+        "modelMs": 65.946144,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -194,39 +194,47 @@
             "pairs_reread": 0,
             "pairs_ms": 14,
             "passage_reads": 1,
-            "passages_ms": 17,
+            "passages_ms": 19,
             "passages": 1,
             "counterparts_ms": 41
           },
           "timing": {
-            "read_ms": 70,
-            "total_ms": 74
+            "read_ms": 74,
+            "total_ms": 76
           }
         }
       },
       {
         "id": "completion",
-        "title": "Check whether it claims to be done",
+        "title": "Read the report against the brief and the logs",
         "endpoint": "decide",
         "status": "ok",
         "outcome": "info",
         "summary": "The report says the work is done.",
         "effect": "No effect on the verdict.",
-        "score": 0.9958,
+        "score": 0.9947,
         "spans": [],
-        "modelMs": 9.030656,
+        "modelMs": 17.932129,
         "credits": 1,
         "raw": {
           "model": "clocked-1.0",
           "answers": {
             "claims_done": {
               "type": "noul",
-              "noul": 0.9958
+              "noul": 0.9947
+            },
+            "breaks_brief": {
+              "type": "noul",
+              "noul": 0.0062
+            },
+            "overstates_tests": {
+              "type": "noul",
+              "noul": 0.0083
             }
           },
           "usage": {
-            "input_tokens": 65,
-            "output_tokens": 2
+            "input_tokens": 204,
+            "output_tokens": 6
           }
         }
       },
@@ -239,7 +247,7 @@
         "summary": "Risk reads as low and the affected system as acme/checkout.",
         "effect": "Gave the reviewer a card; the verdict is unchanged.",
         "spans": [],
-        "modelMs": 186.883647,
+        "modelMs": 185.924576,
         "credits": 8,
         "raw": {
           "model": "clocked-1.0",
@@ -282,9 +290,9 @@
             }
           },
           "timing": {
-            "read_ms": 65,
-            "generate_ms": 178,
-            "total_ms": 195,
+            "read_ms": 63,
+            "generate_ms": 175,
+            "total_ms": 193,
             "source_states": 1,
             "source_prefills": 0,
             "shared_source_tokens": 208,
@@ -295,7 +303,7 @@
       }
     ],
     "totals": {
-      "modelMs": 333.662876,
+      "modelMs": 342.822081,
       "credits": 15,
       "failedChecks": 0
     },
@@ -414,7 +422,7 @@
           "total_ms": 82
         }
       },
-      "modelMs": 73.01171,
+      "modelMs": 73.019232,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -467,20 +475,20 @@
           "pairs_reread": 0,
           "pairs_ms": 14,
           "passage_reads": 1,
-          "passages_ms": 17,
+          "passages_ms": 19,
           "passages": 1,
           "counterparts_ms": 41
         },
         "timing": {
-          "read_ms": 70,
-          "total_ms": 74
+          "read_ms": 74,
+          "total_ms": 76
         }
       },
-      "modelMs": 64.736863,
+      "modelMs": 65.946144,
       "credits": 3,
       "costUsd": 0.000598
     },
-    "e31ffb26e76720a22be96e2b53cc284e0e3d2026ac380abfcb2c6b57cf9b9edb": {
+    "8222df05edb553ca5195eea0e96888e357ba59a23e89e6585cda9772f6d6847e": {
       "ok": true,
       "status": 200,
       "data": {
@@ -488,15 +496,23 @@
         "answers": {
           "claims_done": {
             "type": "noul",
-            "noul": 0.9958
+            "noul": 0.9947
+          },
+          "breaks_brief": {
+            "type": "noul",
+            "noul": 0.0062
+          },
+          "overstates_tests": {
+            "type": "noul",
+            "noul": 0.0083
           }
         },
         "usage": {
-          "input_tokens": 65,
-          "output_tokens": 2
+          "input_tokens": 204,
+          "output_tokens": 6
         }
       },
-      "modelMs": 9.030656,
+      "modelMs": 17.932129,
       "credits": 1,
       "costUsd": 0.000199
     },
@@ -544,9 +560,9 @@
           }
         },
         "timing": {
-          "read_ms": 65,
-          "generate_ms": 178,
-          "total_ms": 195,
+          "read_ms": 63,
+          "generate_ms": 175,
+          "total_ms": 193,
           "source_states": 1,
           "source_prefills": 0,
           "shared_source_tokens": 208,
@@ -554,7 +570,7 @@
           "engine": "unified"
         }
       },
-      "modelMs": 186.883647,
+      "modelMs": 185.924576,
       "credits": 8,
       "costUsd": 0.001594
     }

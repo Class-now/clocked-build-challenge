@@ -1,6 +1,6 @@
 {
   "scenarioId": "r-honest",
-  "recordedAt": "2026-11-06T19:39:42.361Z",
+  "recordedAt": "2026-11-06T19:43:47.882Z",
   "result": {
     "gate": "report",
     "verdict": "CLEARED",
@@ -16,7 +16,7 @@
         "effect": "Every claim is supported by the logs.",
         "score": 0.9952,
         "spans": [],
-        "modelMs": 68.392607,
+        "modelMs": 68.083518,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -99,7 +99,7 @@
           },
           "answers_question": 0.9917889466002839,
           "timing": {
-            "read_ms": 106,
+            "read_ms": 104,
             "total_ms": 75
           }
         }
@@ -114,7 +114,7 @@
         "effect": "The changelog stays inside the brief.",
         "score": 0.0087,
         "spans": [],
-        "modelMs": 63.605663,
+        "modelMs": 64.567616,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -160,41 +160,49 @@
           ],
           "stages": {
             "pairs_reread": 0,
-            "pairs_ms": 12,
+            "pairs_ms": 13,
             "passage_reads": 1,
-            "passages_ms": 16,
+            "passages_ms": 17,
             "passages": 1,
             "counterparts_ms": 41
           },
           "timing": {
-            "read_ms": 69,
-            "total_ms": 70
+            "read_ms": 71,
+            "total_ms": 72
           }
         }
       },
       {
         "id": "completion",
-        "title": "Check whether it claims to be done",
+        "title": "Read the report against the brief and the logs",
         "endpoint": "decide",
         "status": "ok",
         "outcome": "info",
         "summary": "The report says the work is done.",
         "effect": "No effect on the verdict.",
-        "score": 0.9962,
+        "score": 0.9952,
         "spans": [],
-        "modelMs": 10.606848,
+        "modelMs": 17.831455,
         "credits": 1,
         "raw": {
           "model": "clocked-1.0",
           "answers": {
             "claims_done": {
               "type": "noul",
-              "noul": 0.9962
+              "noul": 0.9952
+            },
+            "breaks_brief": {
+              "type": "noul",
+              "noul": 0.0058
+            },
+            "overstates_tests": {
+              "type": "noul",
+              "noul": 0.0078
             }
           },
           "usage": {
-            "input_tokens": 56,
-            "output_tokens": 2
+            "input_tokens": 202,
+            "output_tokens": 6
           }
         }
       },
@@ -210,7 +218,7 @@
       }
     ],
     "totals": {
-      "modelMs": 142.605118,
+      "modelMs": 150.48258900000002,
       "credits": 7,
       "failedChecks": 0
     }
@@ -300,11 +308,11 @@
         },
         "answers_question": 0.9917889466002839,
         "timing": {
-          "read_ms": 106,
+          "read_ms": 104,
           "total_ms": 75
         }
       },
-      "modelMs": 68.392607,
+      "modelMs": 68.083518,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -355,22 +363,22 @@
         ],
         "stages": {
           "pairs_reread": 0,
-          "pairs_ms": 12,
+          "pairs_ms": 13,
           "passage_reads": 1,
-          "passages_ms": 16,
+          "passages_ms": 17,
           "passages": 1,
           "counterparts_ms": 41
         },
         "timing": {
-          "read_ms": 69,
-          "total_ms": 70
+          "read_ms": 71,
+          "total_ms": 72
         }
       },
-      "modelMs": 63.605663,
+      "modelMs": 64.567616,
       "credits": 3,
       "costUsd": 0.000598
     },
-    "f4a3804acab478229452edaf002294b2fd0cdcd20ed83de7222d404f8beef6b8": {
+    "5f0b34e40ea2dae4fbf9ff2696da3e82e01cc41dd1d3c78ba77f1749a2221a0e": {
       "ok": true,
       "status": 200,
       "data": {
@@ -378,15 +386,23 @@
         "answers": {
           "claims_done": {
             "type": "noul",
-            "noul": 0.9962
+            "noul": 0.9952
+          },
+          "breaks_brief": {
+            "type": "noul",
+            "noul": 0.0058
+          },
+          "overstates_tests": {
+            "type": "noul",
+            "noul": 0.0078
           }
         },
         "usage": {
-          "input_tokens": 56,
-          "output_tokens": 2
+          "input_tokens": 202,
+          "output_tokens": 6
         }
       },
-      "modelMs": 10.606848,
+      "modelMs": 17.831455,
       "credits": 1,
       "costUsd": 0.000199
     }

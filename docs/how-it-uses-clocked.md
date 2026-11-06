@@ -28,7 +28,7 @@ Called by all three gates, with different questions.
 
 - Action gate: `state` holds the brief, the tool, the payload and the extracted amount. `instructions` holds the applicable clauses. `questions` has `in_scope`, `violates_clause` and `needs_approval` (`noul`, for a probability), `reversibility` (`score`, with three named levels) and `action_class` (`choice`, with a description of each class).
 - Content gate: `instructs_agent` (`noul`, with `threshold: 0.35`). `state` is the redacted copy, so raw values are not sent twice.
-- Report gate: `claims_done` (`noul`), over the brief and the report.
+- Report gate: `claims_done`, `breaks_brief` and `overstates_tests` (all `noul`), over the brief, the report, the changelog and the logs in order. Verify checks each claim alone and Compare can miss a change described in other words, so the last two read the whole. Either one at or above 0.75 refuses, and from 0.35 up to 0.75 holds.
 
 `violates_clause` and `needs_approval` are separate questions so that "forbidden" can refuse and "allowed once approved" can hold.
 

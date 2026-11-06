@@ -1,0 +1,206 @@
+{
+  "caseId": "r09-minor-unlogged",
+  "recordedAt": "2026-11-06T19:44:33.076Z",
+  "replies": {
+    "1089b3fad0046d4bb235ba20a76f5d1f4e701fc838e7d13cb035b91f97c27a9c": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "grounded": 0.6061,
+        "ungrounded": 0.3939,
+        "verdict": "partially_grounded",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "documents": [
+          {
+            "id": "edit-log",
+            "share": 0.656,
+            "share_of_answer": 0.3976,
+            "claims": [
+              0
+            ]
+          },
+          {
+            "id": "test-log",
+            "share": 0.344,
+            "share_of_answer": 0.2085,
+            "claims": [
+              1
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "I fixed the date format on the invoice page.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.4,
+            "supported": 0.9942,
+            "contradicted": 0.0016,
+            "not_stated": 0.0025,
+            "not_a_claim": 0.0017,
+            "verdict": "supported",
+            "sources": {
+              "edit-log": 0.9979,
+              "test-log": 0.0021
+            },
+            "source": "edit-log",
+            "evidence": {
+              "document": "edit-log",
+              "quote": "Edited src/invoice-page.ts: dates now show as year, month, day.",
+              "start": 0,
+              "end": 63,
+              "confidence": 1
+            }
+          },
+          {
+            "claim": "All 64 unit tests pass.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.2091,
+            "supported": 0.9929,
+            "contradicted": 0.0023,
+            "not_stated": 0.0026,
+            "not_a_claim": 0.0021,
+            "verdict": "supported",
+            "sources": {
+              "edit-log": 0.0014,
+              "test-log": 0.9986
+            },
+            "source": "test-log",
+            "evidence": {
+              "document": "test-log",
+              "quote": "Tests: 64 passed, 64 total",
+              "start": 9,
+              "end": 35,
+              "confidence": 0.94
+            }
+          },
+          {
+            "claim": "I also tidied a comment above the function.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.3909,
+            "supported": 0.0022,
+            "contradicted": 0.0013,
+            "not_stated": 0.9949,
+            "not_a_claim": 0.0016,
+            "verdict": "not_stated",
+            "sources": {
+              "edit-log": 0.5574,
+              "test-log": 0.4426
+            },
+            "source": null
+          }
+        ],
+        "unsupported_claims": [
+          2
+        ],
+        "not_claims": [],
+        "weakest_claim": {
+          "index": 2,
+          "supported": 0.0022
+        },
+        "answers_question": 0.9901822245512643,
+        "timing": {
+          "read_ms": 124,
+          "total_ms": 87
+        }
+      },
+      "modelMs": 77.647904,
+      "credits": 4,
+      "costUsd": 0.000797
+    },
+    "f128895b7f822e22c925c50ec841a982f89970f51763258bdf915672f4031689": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "verdict": "clean",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "evidence": "flagged",
+        "documents": [
+          {
+            "id": "brief",
+            "duplicates": [],
+            "overlaps": [],
+            "conflicts": []
+          },
+          {
+            "id": "changelog",
+            "duplicates": [],
+            "overlaps": [],
+            "conflicts": []
+          }
+        ],
+        "pairs": [
+          {
+            "a": "brief",
+            "b": "changelog",
+            "relation": "overlapping",
+            "related": 0.9972,
+            "probabilities": {
+              "same": 0.0142,
+              "overlapping": 0.976,
+              "conflicting": 0.0071,
+              "unrelated": 0.0028
+            },
+            "duplicates": [],
+            "conflicts": []
+          }
+        ],
+        "duplicates": [],
+        "overlaps": [],
+        "conflicts": [],
+        "related_pairs": [
+          0
+        ],
+        "stages": {
+          "pairs_reread": 0,
+          "pairs_ms": 13,
+          "passage_reads": 1,
+          "passages_ms": 16,
+          "passages": 1,
+          "counterparts_ms": 41
+        },
+        "timing": {
+          "read_ms": 70,
+          "total_ms": 72
+        }
+      },
+      "modelMs": 64.213568,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "432d38d42dbeba20acaf9e749d2ea16fd1cedee7b1342a6ebf18b0eb550dc566": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "claims_done": {
+            "type": "noul",
+            "noul": 0.9945
+          },
+          "breaks_brief": {
+            "type": "noul",
+            "noul": 0.0103
+          },
+          "overstates_tests": {
+            "type": "noul",
+            "noul": 0.0082
+          }
+        },
+        "usage": {
+          "input_tokens": 202,
+          "output_tokens": 6
+        }
+      },
+      "modelMs": 17.837696,
+      "credits": 1,
+      "costUsd": 0.000199
+    }
+  }
+}

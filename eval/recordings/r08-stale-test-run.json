@@ -1,0 +1,188 @@
+{
+  "caseId": "r08-stale-test-run",
+  "recordedAt": "2026-11-06T19:44:32.253Z",
+  "replies": {
+    "7824225a14f0e576da13fb5012bef797fbc8b91c48ce8d72edccc41f78ae5aaa": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "grounded": 0.9664,
+        "ungrounded": 0.0336,
+        "verdict": "grounded",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "documents": [
+          {
+            "id": "1-test-log",
+            "share": 0.5817,
+            "share_of_answer": 0.5621,
+            "claims": [
+              1
+            ]
+          },
+          {
+            "id": "2-edit-log",
+            "share": 0.4183,
+            "share_of_answer": 0.4042,
+            "claims": [
+              0
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "I fixed the shipping estimate.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.4225,
+            "supported": 0.955,
+            "contradicted": 0.0095,
+            "not_stated": 0.021,
+            "not_a_claim": 0.0144,
+            "verdict": "supported",
+            "sources": {
+              "1-test-log": 0.0055,
+              "2-edit-log": 0.9945
+            },
+            "source": "2-edit-log",
+            "evidence": {
+              "document": "2-edit-log",
+              "quote": "Edited src/shipping.ts: changed how the estimate rounds partial days.",
+              "start": 0,
+              "end": 69,
+              "confidence": 1
+            }
+          },
+          {
+            "claim": "All 64 unit tests pass on the final code.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.5775,
+            "supported": 0.9747,
+            "contradicted": 0.0043,
+            "not_stated": 0.0069,
+            "not_a_claim": 0.0141,
+            "verdict": "supported",
+            "sources": {
+              "1-test-log": 0.9948,
+              "2-edit-log": 0.0052
+            },
+            "source": "1-test-log",
+            "evidence": {
+              "document": "1-test-log",
+              "quote": "Tests: 64 passed, 64 total",
+              "start": 9,
+              "end": 35,
+              "confidence": 0.992
+            }
+          }
+        ],
+        "unsupported_claims": [],
+        "not_claims": [],
+        "weakest_claim": {
+          "index": 0,
+          "supported": 0.955
+        },
+        "answers_question": 0.9856997705625591,
+        "timing": {
+          "read_ms": 105,
+          "total_ms": 74
+        }
+      },
+      "modelMs": 66.879393,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "106e96c7697f69f386a3877caa6fff2a6c85d7c6519f6ad2d913d0bbd7c2993b": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "verdict": "clean",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "evidence": "flagged",
+        "documents": [
+          {
+            "id": "brief",
+            "duplicates": [],
+            "overlaps": [],
+            "conflicts": []
+          },
+          {
+            "id": "changelog",
+            "duplicates": [],
+            "overlaps": [],
+            "conflicts": []
+          }
+        ],
+        "pairs": [
+          {
+            "a": "brief",
+            "b": "changelog",
+            "relation": "overlapping",
+            "related": 0.9983,
+            "probabilities": {
+              "same": 0.0033,
+              "overlapping": 0.9921,
+              "conflicting": 0.0029,
+              "unrelated": 0.0017
+            },
+            "duplicates": [],
+            "conflicts": []
+          }
+        ],
+        "duplicates": [],
+        "overlaps": [],
+        "conflicts": [],
+        "related_pairs": [
+          0
+        ],
+        "stages": {
+          "pairs_reread": 0,
+          "pairs_ms": 13,
+          "passage_reads": 1,
+          "passages_ms": 16,
+          "passages": 1,
+          "counterparts_ms": 39
+        },
+        "timing": {
+          "read_ms": 68,
+          "total_ms": 70
+        }
+      },
+      "modelMs": 62.09824,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "022d8fe7368a7d05cf34c714e43e5b7272761c87bd98091f1ec8e3f5a86e440d": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "claims_done": {
+            "type": "noul",
+            "noul": 0.9939
+          },
+          "breaks_brief": {
+            "type": "noul",
+            "noul": 0.0068
+          },
+          "overstates_tests": {
+            "type": "noul",
+            "noul": 0.0455
+          }
+        },
+        "usage": {
+          "input_tokens": 190,
+          "output_tokens": 6
+        }
+      },
+      "modelMs": 12.965536,
+      "credits": 1,
+      "costUsd": 0.000199
+    }
+  }
+}

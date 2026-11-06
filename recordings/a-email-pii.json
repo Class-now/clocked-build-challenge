@@ -1,6 +1,6 @@
 {
   "scenarioId": "a-email-pii",
-  "recordedAt": "2026-11-06T19:39:37.293Z",
+  "recordedAt": "2026-11-06T19:43:42.732Z",
   "result": {
     "gate": "action",
     "verdict": "CLEARED_REDACTED",
@@ -16,7 +16,7 @@
         "effect": "Only SUP-2 went into the later checks and the reasons.",
         "score": 0.9511,
         "spans": [],
-        "modelMs": 32.204449,
+        "modelMs": 33.909344,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -123,8 +123,8 @@
             "input_tokens": 1031
           },
           "timing": {
-            "total_ms": 35,
-            "rerank_ms": 34,
+            "total_ms": 37,
+            "rerank_ms": 36,
             "questions_ms": 0,
             "model_ms": 31,
             "engine": {
@@ -137,7 +137,7 @@
               "total_ms": 31,
               "build_ms": 0,
               "doc_ms": 0,
-              "forward_ms": 31,
+              "forward_ms": 30,
               "state_ms": 0,
               "logits_ms": 0,
               "state_chars": 0,
@@ -166,7 +166,7 @@
         "summary": "Found 0 host(s), 0 path(s), 1 recipient(s) and no amount.",
         "effect": "Every host found is on the allowlist.",
         "spans": [],
-        "modelMs": 79.327393,
+        "modelMs": 78.731873,
         "credits": 4,
         "raw": {
           "model": "clocked-1.0",
@@ -216,14 +216,14 @@
                 "reader": "recognition",
                 "doc": 0,
                 "branches": 1,
-                "generate": 66,
+                "generate": 65,
                 "locate": 0,
                 "verify": 10,
                 "assemble": 0
               }
             },
             "total_ms": 78,
-            "server_ms": 83
+            "server_ms": 81
           }
         }
       },
@@ -251,7 +251,7 @@
             "label": "date_of_birth"
           }
         ],
-        "modelMs": 68.20182,
+        "modelMs": 69.461601,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -301,8 +301,8 @@
           },
           "anonymized_text": "To: the operations desk at partner-logistics.example\nSubject: Redelivery for order ORD-7731\n\nPlease redeliver the parcel for order ORD-7731 this week.\nThe customer can be reached on <PHONE>. Their date of birth is <DATE_OF_BIRTH>.",
           "timing": {
-            "read_ms": 70,
-            "total_ms": 71
+            "read_ms": 71,
+            "total_ms": 72
           }
         },
         "transformed": true
@@ -317,7 +317,7 @@
         "effect": "In scope, and no applicable clause objects.",
         "score": 0.991,
         "spans": [],
-        "modelMs": 59.119072,
+        "modelMs": 58.721729,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -383,7 +383,7 @@
       }
     ],
     "totals": {
-      "modelMs": 238.852734,
+      "modelMs": 240.824547,
       "credits": 12,
       "failedChecks": 0
     },
@@ -498,8 +498,8 @@
           "input_tokens": 1031
         },
         "timing": {
-          "total_ms": 35,
-          "rerank_ms": 34,
+          "total_ms": 37,
+          "rerank_ms": 36,
           "questions_ms": 0,
           "model_ms": 31,
           "engine": {
@@ -512,7 +512,7 @@
             "total_ms": 31,
             "build_ms": 0,
             "doc_ms": 0,
-            "forward_ms": 31,
+            "forward_ms": 30,
             "state_ms": 0,
             "logits_ms": 0,
             "state_chars": 0,
@@ -521,7 +521,7 @@
           }
         }
       },
-      "modelMs": 32.204449,
+      "modelMs": 33.909344,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -576,17 +576,17 @@
               "reader": "recognition",
               "doc": 0,
               "branches": 1,
-              "generate": 66,
+              "generate": 65,
               "locate": 0,
               "verify": 10,
               "assemble": 0
             }
           },
           "total_ms": 78,
-          "server_ms": 83
+          "server_ms": 81
         }
       },
-      "modelMs": 79.327393,
+      "modelMs": 78.731873,
       "credits": 4,
       "costUsd": 0.000797
     },
@@ -641,11 +641,11 @@
         },
         "anonymized_text": "To: the operations desk at partner-logistics.example\nSubject: Redelivery for order ORD-7731\n\nPlease redeliver the parcel for order ORD-7731 this week.\nThe customer can be reached on <PHONE>. Their date of birth is <DATE_OF_BIRTH>.",
         "timing": {
-          "read_ms": 70,
-          "total_ms": 71
+          "read_ms": 71,
+          "total_ms": 72
         }
       },
-      "modelMs": 68.20182,
+      "modelMs": 69.461601,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -703,7 +703,7 @@
           "output_tokens": 17
         }
       },
-      "modelMs": 59.119072,
+      "modelMs": 58.721729,
       "credits": 3,
       "costUsd": 0.000598
     }

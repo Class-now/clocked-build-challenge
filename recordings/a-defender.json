@@ -1,6 +1,6 @@
 {
   "scenarioId": "a-defender",
-  "recordedAt": "2026-11-06T19:39:33.399Z",
+  "recordedAt": "2026-11-06T19:43:38.527Z",
   "result": {
     "gate": "action",
     "verdict": "REFUSED",
@@ -32,7 +32,7 @@
         "effect": "Only SEC-1, SUP-3, SUP-4 went into the later checks and the reasons.",
         "score": 0.9843,
         "spans": [],
-        "modelMs": 32.475777,
+        "modelMs": 33.993313,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -137,10 +137,10 @@
             "input_tokens": 884
           },
           "timing": {
-            "total_ms": 36,
-            "rerank_ms": 35,
+            "total_ms": 37,
+            "rerank_ms": 36,
             "questions_ms": 0,
-            "model_ms": 32,
+            "model_ms": 31,
             "engine": {
               "rows": 1605,
               "branches": 7,
@@ -148,7 +148,7 @@
               "bins": 1,
               "bucket_rows": 2048,
               "long": 0,
-              "total_ms": 32,
+              "total_ms": 31,
               "build_ms": 0,
               "doc_ms": 0,
               "forward_ms": 31,
@@ -179,7 +179,7 @@
             "label": "security blinding or EDR evasion"
           }
         ],
-        "modelMs": 45.066975,
+        "modelMs": 45.417953,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -233,7 +233,7 @@
         "summary": "Found 0 host(s), 0 path(s), 0 recipient(s) and no amount.",
         "effect": "Every host found is on the allowlist.",
         "spans": [],
-        "modelMs": 53.017216,
+        "modelMs": 51.812225,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -261,7 +261,7 @@
             }
           },
           "timing": {
-            "read_ms": 52,
+            "read_ms": 51,
             "forwards": {
               "fields": [
                 4,
@@ -273,14 +273,14 @@
                 "reader": "recognition",
                 "doc": 0,
                 "branches": 1,
-                "generate": 50,
+                "generate": 49,
                 "locate": 0,
                 "verify": 0,
                 "assemble": 0
               }
             },
-            "total_ms": 52,
-            "server_ms": 56
+            "total_ms": 51,
+            "server_ms": 54
           }
         }
       },
@@ -294,7 +294,7 @@
         "effect": "Refused: This action breaks a policy clause (0.99). Applicable clauses: SEC-1, SUP-3, SUP-4.",
         "score": 0.0085,
         "spans": [],
-        "modelMs": 59.326721,
+        "modelMs": 58.85088,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -367,7 +367,7 @@
         "summary": "Risk reads as critical and the affected system as printer queue on workstation WS-41.",
         "effect": "Gave the reviewer a card; the verdict is unchanged.",
         "spans": [],
-        "modelMs": 223.548157,
+        "modelMs": 222.489826,
         "credits": 9,
         "raw": {
           "model": "clocked-1.0",
@@ -411,8 +411,8 @@
           },
           "timing": {
             "read_ms": 86,
-            "generate_ms": 214,
-            "total_ms": 231,
+            "generate_ms": 212,
+            "total_ms": 229,
             "source_states": 1,
             "source_prefills": 0,
             "shared_source_tokens": 304,
@@ -423,7 +423,7 @@
       }
     ],
     "totals": {
-      "modelMs": 413.434846,
+      "modelMs": 412.564197,
       "credits": 19,
       "failedChecks": 0
     },
@@ -542,10 +542,10 @@
           "input_tokens": 884
         },
         "timing": {
-          "total_ms": 36,
-          "rerank_ms": 35,
+          "total_ms": 37,
+          "rerank_ms": 36,
           "questions_ms": 0,
-          "model_ms": 32,
+          "model_ms": 31,
           "engine": {
             "rows": 1605,
             "branches": 7,
@@ -553,7 +553,7 @@
             "bins": 1,
             "bucket_rows": 2048,
             "long": 0,
-            "total_ms": 32,
+            "total_ms": 31,
             "build_ms": 0,
             "doc_ms": 0,
             "forward_ms": 31,
@@ -565,7 +565,7 @@
           }
         }
       },
-      "modelMs": 32.475777,
+      "modelMs": 33.993313,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -614,7 +614,7 @@
           "total_ms": 48
         }
       },
-      "modelMs": 45.066975,
+      "modelMs": 45.417953,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -647,7 +647,7 @@
           }
         },
         "timing": {
-          "read_ms": 52,
+          "read_ms": 51,
           "forwards": {
             "fields": [
               4,
@@ -659,17 +659,17 @@
               "reader": "recognition",
               "doc": 0,
               "branches": 1,
-              "generate": 50,
+              "generate": 49,
               "locate": 0,
               "verify": 0,
               "assemble": 0
             }
           },
-          "total_ms": 52,
-          "server_ms": 56
+          "total_ms": 51,
+          "server_ms": 54
         }
       },
-      "modelMs": 53.017216,
+      "modelMs": 51.812225,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -727,7 +727,7 @@
           "output_tokens": 17
         }
       },
-      "modelMs": 59.326721,
+      "modelMs": 58.85088,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -776,8 +776,8 @@
         },
         "timing": {
           "read_ms": 86,
-          "generate_ms": 214,
-          "total_ms": 231,
+          "generate_ms": 212,
+          "total_ms": 229,
           "source_states": 1,
           "source_prefills": 0,
           "shared_source_tokens": 304,
@@ -785,7 +785,7 @@
           "engine": "unified"
         }
       },
-      "modelMs": 223.548157,
+      "modelMs": 222.489826,
       "credits": 9,
       "costUsd": 0.001793
     }

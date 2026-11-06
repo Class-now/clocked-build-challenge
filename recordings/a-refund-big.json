@@ -1,6 +1,6 @@
 {
   "scenarioId": "a-refund-big",
-  "recordedAt": "2026-11-06T19:39:38.570Z",
+  "recordedAt": "2026-11-06T19:43:44.023Z",
   "result": {
     "gate": "action",
     "verdict": "HELD",
@@ -27,7 +27,7 @@
         "effect": "Only SUP-1 went into the later checks and the reasons.",
         "score": 0.9866,
         "spans": [],
-        "modelMs": 31.6752,
+        "modelMs": 32.202656,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -134,10 +134,10 @@
             "input_tokens": 618
           },
           "timing": {
-            "total_ms": 35,
+            "total_ms": 50,
             "rerank_ms": 34,
             "questions_ms": 0,
-            "model_ms": 31,
+            "model_ms": 30,
             "engine": {
               "rows": 1675,
               "branches": 7,
@@ -145,7 +145,7 @@
               "bins": 1,
               "bucket_rows": 2048,
               "long": 0,
-              "total_ms": 31,
+              "total_ms": 30,
               "build_ms": 0,
               "doc_ms": 0,
               "forward_ms": 30,
@@ -185,7 +185,7 @@
             "label": "amount"
           }
         ],
-        "modelMs": 54.467457,
+        "modelMs": 54.297729,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -227,10 +227,10 @@
               "fields": {
                 "reader": "recognition",
                 "doc": 0,
-                "branches": 1,
+                "branches": 0,
                 "generate": 40,
                 "locate": 0,
-                "verify": 11,
+                "verify": 12,
                 "assemble": 0
               }
             },
@@ -249,7 +249,7 @@
         "effect": "Held: This action is not clearly part of the approved work (in scope 0.49).",
         "score": 0.4932,
         "spans": [],
-        "modelMs": 47.782047,
+        "modelMs": 47.467712,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -322,8 +322,8 @@
         "summary": "Risk reads as medium and the affected system as order ORD-7755.",
         "effect": "Gave the reviewer a card; the verdict is unchanged.",
         "spans": [],
-        "modelMs": 228.703485,
-        "credits": 10,
+        "modelMs": 224.242819,
+        "credits": 9,
         "raw": {
           "model": "clocked-1.0",
           "fields": {
@@ -365,9 +365,9 @@
             }
           },
           "timing": {
-            "read_ms": 88,
-            "generate_ms": 219,
-            "total_ms": 238,
+            "read_ms": 85,
+            "generate_ms": 214,
+            "total_ms": 231,
             "source_states": 1,
             "source_prefills": 0,
             "shared_source_tokens": 240,
@@ -378,8 +378,8 @@
       }
     ],
     "totals": {
-      "modelMs": 362.628189,
-      "credits": 17,
+      "modelMs": 358.210916,
+      "credits": 16,
       "failedChecks": 0
     },
     "reviewCard": {
@@ -499,10 +499,10 @@
           "input_tokens": 618
         },
         "timing": {
-          "total_ms": 35,
+          "total_ms": 50,
           "rerank_ms": 34,
           "questions_ms": 0,
-          "model_ms": 31,
+          "model_ms": 30,
           "engine": {
             "rows": 1675,
             "branches": 7,
@@ -510,7 +510,7 @@
             "bins": 1,
             "bucket_rows": 2048,
             "long": 0,
-            "total_ms": 31,
+            "total_ms": 30,
             "build_ms": 0,
             "doc_ms": 0,
             "forward_ms": 30,
@@ -522,7 +522,7 @@
           }
         }
       },
-      "modelMs": 31.6752,
+      "modelMs": 32.202656,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -569,10 +569,10 @@
             "fields": {
               "reader": "recognition",
               "doc": 0,
-              "branches": 1,
+              "branches": 0,
               "generate": 40,
               "locate": 0,
-              "verify": 11,
+              "verify": 12,
               "assemble": 0
             }
           },
@@ -580,7 +580,7 @@
           "server_ms": 57
         }
       },
-      "modelMs": 54.467457,
+      "modelMs": 54.297729,
       "credits": 3,
       "costUsd": 0.000598
     },
@@ -638,7 +638,7 @@
           "output_tokens": 17
         }
       },
-      "modelMs": 47.782047,
+      "modelMs": 47.467712,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -686,9 +686,9 @@
           }
         },
         "timing": {
-          "read_ms": 88,
-          "generate_ms": 219,
-          "total_ms": 238,
+          "read_ms": 85,
+          "generate_ms": 214,
+          "total_ms": 231,
           "source_states": 1,
           "source_prefills": 0,
           "shared_source_tokens": 240,
@@ -696,9 +696,9 @@
           "engine": "unified"
         }
       },
-      "modelMs": 228.703485,
-      "credits": 10,
-      "costUsd": 0.001992
+      "modelMs": 224.242819,
+      "credits": 9,
+      "costUsd": 0.001793
     }
   }
 }

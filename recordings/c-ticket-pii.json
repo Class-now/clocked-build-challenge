@@ -1,6 +1,6 @@
 {
   "scenarioId": "c-ticket-pii",
-  "recordedAt": "2026-11-06T19:39:41.564Z",
+  "recordedAt": "2026-11-06T19:43:47.062Z",
   "result": {
     "gate": "content",
     "verdict": "CLEARED_REDACTED",
@@ -22,7 +22,7 @@
         "effect": "No objection, so the content may pass on.",
         "score": 0.006055156568850362,
         "spans": [],
-        "modelMs": 84.55872,
+        "modelMs": 85.668768,
         "credits": 4,
         "raw": {
           "model": "clocked-1.0",
@@ -53,7 +53,7 @@
           "evidence": [],
           "timing": {
             "read_ms": 23,
-            "total_ms": 23
+            "total_ms": 24
           }
         }
       },
@@ -146,8 +146,8 @@
           },
           "anonymized_text": "Ticket T-2231\nFrom: <PERSON>, <EMAIL>\n\nI was charged twice for order ORD-7790. The card I used was <CREDIT_CARD>. Could you check what happened?",
           "timing": {
-            "read_ms": 67,
-            "total_ms": 68
+            "read_ms": 68,
+            "total_ms": 69
           }
         },
         "transformed": true
@@ -162,7 +162,7 @@
         "effect": "The text is wrapped in a labelled untrusted-data envelope.",
         "score": 0.8898,
         "spans": [],
-        "modelMs": 10.558048,
+        "modelMs": 10.551776,
         "credits": 1,
         "raw": {
           "model": "clocked-1.0",
@@ -182,7 +182,7 @@
       }
     ],
     "totals": {
-      "modelMs": 95.116768,
+      "modelMs": 96.220544,
       "credits": 5,
       "failedChecks": 0
     },
@@ -199,7 +199,7 @@
             "step": 0,
             "endpoint": "injection",
             "status": 200,
-            "ms": 23,
+            "ms": 24,
             "result": {
               "model": "clocked-1.0",
               "injection": 0.006055156568850362,
@@ -229,7 +229,7 @@
               "evidence": [],
               "timing": {
                 "read_ms": 23,
-                "total_ms": 23
+                "total_ms": 24
               }
             }
           },
@@ -237,7 +237,7 @@
             "step": 1,
             "endpoint": "pii",
             "status": 200,
-            "ms": 68,
+            "ms": 69,
             "result": {
               "model": "clocked-1.0",
               "entities": [
@@ -296,19 +296,19 @@
               },
               "anonymized_text": "Ticket T-2231\nFrom: <PERSON>, <EMAIL>\n\nI was charged twice for order ORD-7790. The card I used was <CREDIT_CARD>. Could you check what happened?",
               "timing": {
-                "read_ms": 67,
-                "total_ms": 68
+                "read_ms": 68,
+                "total_ms": 69
               }
             }
           }
         ],
         "stopped": null,
         "timing": {
-          "total_ms": 92,
+          "total_ms": 93,
           "model_ms": 0
         }
       },
-      "modelMs": 84.55872,
+      "modelMs": 85.668768,
       "credits": 4,
       "costUsd": 0.000797
     },
@@ -330,7 +330,7 @@
           "output_tokens": 2
         }
       },
-      "modelMs": 10.558048,
+      "modelMs": 10.551776,
       "credits": 1,
       "costUsd": 0.000199
     }

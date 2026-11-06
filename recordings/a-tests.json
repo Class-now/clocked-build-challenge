@@ -1,6 +1,6 @@
 {
   "scenarioId": "a-tests",
-  "recordedAt": "2026-11-06T19:39:31.609Z",
+  "recordedAt": "2026-11-06T19:43:36.890Z",
   "result": {
     "gate": "action",
     "verdict": "CLEARED",
@@ -16,7 +16,7 @@
         "effect": "Only DEV-1, DEV-4 went into the later checks and the reasons.",
         "score": 0.9344,
         "spans": [],
-        "modelMs": 32.924446,
+        "modelMs": 33.638912,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -136,10 +136,10 @@
             "input_tokens": 453
           },
           "timing": {
-            "total_ms": 38,
+            "total_ms": 37,
             "rerank_ms": 37,
             "questions_ms": 0,
-            "model_ms": 32,
+            "model_ms": 31,
             "engine": {
               "rows": 1789,
               "branches": 8,
@@ -147,7 +147,7 @@
               "bins": 1,
               "bucket_rows": 2048,
               "long": 0,
-              "total_ms": 32,
+              "total_ms": 31,
               "build_ms": 0,
               "doc_ms": 0,
               "forward_ms": 31,
@@ -170,7 +170,7 @@
         "effect": "No objection, but this alone does not authorise the action.",
         "score": 0.005395378842733223,
         "spans": [],
-        "modelMs": 35.31152,
+        "modelMs": 35.95232,
         "credits": 2,
         "raw": {
           "model": "clocked-1.0",
@@ -217,7 +217,7 @@
         "summary": "Found 0 host(s), 1 path(s), 0 recipient(s) and no amount.",
         "effect": "Every host found is on the allowlist.",
         "spans": [],
-        "modelMs": 75.942307,
+        "modelMs": 76.536865,
         "credits": 4,
         "raw": {
           "model": "clocked-1.0",
@@ -255,7 +255,7 @@
             }
           },
           "timing": {
-            "read_ms": 75,
+            "read_ms": 76,
             "forwards": {
               "fields": [
                 6,
@@ -269,12 +269,12 @@
                 "branches": 1,
                 "generate": 63,
                 "locate": 0,
-                "verify": 9,
+                "verify": 10,
                 "assemble": 0
               }
             },
-            "total_ms": 75,
-            "server_ms": 78
+            "total_ms": 76,
+            "server_ms": 79
           }
         }
       },
@@ -288,7 +288,7 @@
         "effect": "In scope, and no applicable clause objects.",
         "score": 0.9805,
         "spans": [],
-        "modelMs": 57.769249,
+        "modelMs": 58.348255,
         "credits": 3,
         "raw": {
           "model": "clocked-1.0",
@@ -364,7 +364,7 @@
       }
     ],
     "totals": {
-      "modelMs": 201.947522,
+      "modelMs": 204.476352,
       "credits": 11,
       "failedChecks": 0
     }
@@ -491,10 +491,10 @@
           "input_tokens": 453
         },
         "timing": {
-          "total_ms": 38,
+          "total_ms": 37,
           "rerank_ms": 37,
           "questions_ms": 0,
-          "model_ms": 32,
+          "model_ms": 31,
           "engine": {
             "rows": 1789,
             "branches": 8,
@@ -502,7 +502,7 @@
             "bins": 1,
             "bucket_rows": 2048,
             "long": 0,
-            "total_ms": 32,
+            "total_ms": 31,
             "build_ms": 0,
             "doc_ms": 0,
             "forward_ms": 31,
@@ -514,7 +514,7 @@
           }
         }
       },
-      "modelMs": 32.924446,
+      "modelMs": 33.638912,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -556,7 +556,7 @@
           "total_ms": 38
         }
       },
-      "modelMs": 35.31152,
+      "modelMs": 35.95232,
       "credits": 2,
       "costUsd": 0.000398
     },
@@ -599,7 +599,7 @@
           }
         },
         "timing": {
-          "read_ms": 75,
+          "read_ms": 76,
           "forwards": {
             "fields": [
               6,
@@ -613,15 +613,15 @@
               "branches": 1,
               "generate": 63,
               "locate": 0,
-              "verify": 9,
+              "verify": 10,
               "assemble": 0
             }
           },
-          "total_ms": 75,
-          "server_ms": 78
+          "total_ms": 76,
+          "server_ms": 79
         }
       },
-      "modelMs": 75.942307,
+      "modelMs": 76.536865,
       "credits": 4,
       "costUsd": 0.000797
     },
@@ -679,7 +679,7 @@
           "output_tokens": 17
         }
       },
-      "modelMs": 57.769249,
+      "modelMs": 58.348255,
       "credits": 3,
       "costUsd": 0.000598
     }
