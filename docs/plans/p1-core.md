@@ -152,7 +152,7 @@ Fixtures: `src/core/__fixtures__/` hold hand-written replies shaped like the rec
 - **decide** (`completion`): state = brief + report; question `claims_done` (noul). If the report claims completion while a contradicted claim exists, the reason says so.
 - **fill** (`review-card`): as in the action gate, on `HELD` or `REFUSED`.
 
-- [ ] Tests cover: honest report cleared, "all tests passed" against a failing log refused with both spans, scope drift caught, unsupported claim held, injected content refused with no `forwardText`, quoted attack in a benign security article cleared, PII in content replaced, pipeline step failure fails closed
+- [x] Tests cover: honest report cleared, "all tests passed" against a failing log refused with both spans, scope drift caught, unsupported claim held, injected content refused with no `forwardText`, quoted attack in a benign security article cleared, PII in content replaced, pipeline step failure fails closed
 
 ### Task 6: Scenarios
 
