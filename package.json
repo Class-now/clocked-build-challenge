@@ -10,12 +10,18 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "record": "tsx scripts/record.ts"
+    "record": "tsx scripts/record.ts",
+    "gatehouse": "tsx src/cli/gatehouse.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
-    "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vitest": "^5.1.0"
+  },
+  "bin": {
+    "gatehouse": "src/cli/bin.mjs"
+  },
+  "dependencies": {
+    "tsx": "^4.23.15"
   }
 }

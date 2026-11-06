@@ -8,3 +8,4 @@ dist/
 .ralphex/progress/
 coverage/
 *.log
+.gatehouse/

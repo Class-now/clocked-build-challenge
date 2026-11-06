@@ -27,7 +27,7 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 - Config: `gatehouse.config.json` in `cwd`, with `brief`, `policyPack` (built-in id or a path to JSON), `outboundTools`, `skipTools`. Sample in `examples/gatehouse.config.json`. Sample hook settings in `examples/claude-settings.json`. Missing config prints `ask` with a reason saying how to create one.
 - Short-circuit: tools in `skipTools` and read-only commands in a small built-in list (`ls`, `pwd`, `git status`, `git diff`) allow without a call, so credits are not spent on them. Each run appends one JSON line to `.gatehouse/audit.jsonl` with time, gate, verdict, reasons and credits, with no raw text.
 
-- [ ] Tests feed real-shaped hook events through a fake transport and assert the printed JSON for each verdict, service failure, missing config, `stop_hook_active`, and skip list
+- [x] Tests feed real-shaped hook events through a fake transport and assert the printed JSON for each verdict, service failure, missing config, `stop_hook_active`, and skip list
 
 ### Task 2: A simulated agent run
 

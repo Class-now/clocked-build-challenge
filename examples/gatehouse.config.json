@@ -1,0 +1,7 @@
+{
+  "brief": "Fix the rounding bug in the checkout total in acme/checkout and confirm the unit tests pass.",
+  "policyPack": "acme-devops",
+  "outboundTools": ["mcp__mail__send_message"],
+  "skipTools": ["Glob", "Grep", "TodoWrite"],
+  "contentTools": ["mcp__docs__*"]
+}
