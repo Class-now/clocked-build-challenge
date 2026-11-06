@@ -208,10 +208,10 @@ function topLevel(answer: any): string {
   return level;
 }
 
-async function decideScope(input: ActionInput, applicable: PolicyClause[], targets: Targets, t: ClockedTransport, checks: CheckResult[], reasons: Reason[]): Promise<Scope> {
+async function decideScope(input: ActionInput, payload: string, applicable: PolicyClause[], targets: Targets, t: ClockedTransport, checks: CheckResult[], reasons: Reason[]): Promise<Scope> {
   const amountLine = targets.amount ?? (targets.ran ? 'none found' : 'not available');
   const reply = await safeCall(t, 'decide', {
-    state: `Approved work: ${input.brief}\nTool: ${input.tool}\nPayload: ${input.payload}\nExtracted amount: ${amountLine}`,
+    state: `Approved work: ${input.brief}\nTool: ${input.tool}\nPayload: ${payload}\nExtracted amount: ${amountLine}`,
     instructions: `Policy clauses that apply:\n${clauseText(applicable)}`,
     questions: {
       in_scope: { type: 'noul', instructions: 'Is this action part of the approved work?' },
@@ -298,7 +298,11 @@ async function protectOutbound(input: ActionInput, scope: Scope, t: ClockedTrans
       status: 'ok',
       outcome: found ? 'flag' : 'pass',
       summary: found ? `Found ${read.count} personal data item(s): ${read.kinds.join(', ')}.` : 'Found no personal data.',
-      effect: found ? 'The recipient gets the redacted copy, with placeholders in place of these values.' : 'The text goes out unchanged.',
+      effect: !found
+        ? 'The text goes out unchanged.'
+        : input.outbound === true
+          ? 'The scope decision read the redacted copy, and the recipient gets it too, with placeholders in place of these values.'
+          : 'The recipient gets the redacted copy, with placeholders in place of these values.',
       spans: read.spans,
       modelMs: reply.modelMs,
       credits: reply.credits,
@@ -320,8 +324,11 @@ export async function runAction(input: ActionInput, t: ClockedTransport): Promis
   const applicable = await policyMatch(input, t, checks, reasons);
   await scriptRisk(input, applicable, t, checks, reasons);
   const targets = await findTargets(input, t, checks, reasons);
-  const scope = await decideScope(input, applicable, targets, t, checks, reasons);
-  const outbound = await protectOutbound(input, scope, t, checks, reasons);
+  // A declared outbound message is judged as it would leave. Otherwise Decide reads personal data
+  // that will never be sent and refuses a message that is fine once redacted.
+  const early = input.outbound === true ? await protectOutbound(input, { actionClass: 'outbound message' }, t, checks, reasons) : undefined;
+  const scope = await decideScope(input, early?.redacted ?? input.payload, applicable, targets, t, checks, reasons);
+  const outbound = early ?? await protectOutbound(input, scope, t, checks, reasons);
 
   // Whether extract matters depends on the action, so this comes after the class is known.
   const words = toolWords(input.tool);

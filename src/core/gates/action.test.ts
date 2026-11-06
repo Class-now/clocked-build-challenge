@@ -168,6 +168,9 @@ describe('runAction', () => {
     const span = check(result, 'outbound-pii').spans[0];
     expect(payload.slice(span.start, span.end)).toBe('+1-555-010-7788');
     expect(t.bodyOf('pii').anonymize).toBe('replace');
+    expect(t.bodyOf('decide').state).toContain('<PHONE>');
+    expect(t.bodyOf('decide').state).not.toContain('555-010');
+    expect(t.endpoints().indexOf('pii')).toBeLessThan(t.endpoints().indexOf('decide'));
   });
 
   it('forwards unchanged outbound text with no PII, and runs pii on the class alone', async () => {
