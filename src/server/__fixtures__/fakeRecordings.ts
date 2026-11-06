@@ -33,6 +33,7 @@ function replies(id: string): Partial<Record<EndpointName, FakeReply>> {
       return {
         script: ok(scriptReply(0.99, 'security blinding or EDR evasion', [{ line, start, end: start + line.length }])),
         decide: ok(scopeReply({ action_class: 'security control', violates_clause: 0.97, reversibility: 'hard to undo' })),
+        fill: ok(fillReply({ summary: 'The agent tried to turn off real-time malware scanning while fixing a printer queue.' })),
       };
     }
     case 'a-curl-bash':

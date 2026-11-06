@@ -49,8 +49,8 @@ On a narrow screen the queue becomes a horizontal scroller at the top. Keyboard:
 
 The first scenario in the queue, `a-defender`, is selected on load so the first paint shows a `REFUSED` stamp and evidence.
 
-- [ ] Selecting a scenario in recorded mode shows its result with no network call beyond the first load
-- [ ] Component tests with Testing Library cover: rendering each verdict, span highlight on hover, failed check rendering, redacted forward text, audit log persisting
+- [x] Selecting a scenario in recorded mode shows its result with no network call beyond the first load
+- [x] Component tests with Testing Library cover: rendering each verdict, span highlight on hover, failed check rendering, redacted forward text, audit log persisting
 
 ### Task 3: Try your own, and every empty and failure state
 
