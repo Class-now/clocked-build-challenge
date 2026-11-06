@@ -1,0 +1,687 @@
+{
+  "scenarioId": "a-tests",
+  "recordedAt": "2026-11-06T19:39:31.609Z",
+  "result": {
+    "gate": "action",
+    "verdict": "CLEARED",
+    "reasons": [],
+    "checks": [
+      {
+        "id": "policy-match",
+        "title": "Find the clauses that apply",
+        "endpoint": "rerank",
+        "status": "ok",
+        "outcome": "info",
+        "summary": "2 of 8 clauses apply to this action: DEV-1, DEV-4.",
+        "effect": "Only DEV-1, DEV-4 went into the later checks and the reasons.",
+        "score": 0.9344,
+        "spans": [],
+        "modelMs": 32.924446,
+        "credits": 2,
+        "raw": {
+          "model": "clocked-1.0",
+          "results": [
+            {
+              "index": 3,
+              "id": "DEV-4",
+              "action": "use",
+              "relevance_score": 0.9344,
+              "document_score": 0.9503,
+              "levels": {
+                "answers": 0.9344,
+                "elsewhere": 0.0159,
+                "different_case": 0.0172,
+                "unrelated": 0.0326
+              }
+            },
+            {
+              "index": 0,
+              "id": "DEV-1",
+              "action": "use",
+              "relevance_score": 0.8556,
+              "document_score": 0.8768,
+              "levels": {
+                "answers": 0.8556,
+                "elsewhere": 0.0212,
+                "different_case": 0.0268,
+                "unrelated": 0.0964
+              }
+            },
+            {
+              "index": 7,
+              "id": "DEV-8",
+              "action": "skip",
+              "reason": "unrelated",
+              "relevance_score": 0.0179,
+              "document_score": 0.0595,
+              "levels": {
+                "answers": 0.0179,
+                "elsewhere": 0.0416,
+                "different_case": 0.0828,
+                "unrelated": 0.8577
+              }
+            },
+            {
+              "index": 2,
+              "id": "DEV-3",
+              "action": "skip",
+              "reason": "unrelated",
+              "relevance_score": 0.0178,
+              "document_score": 0.0556,
+              "levels": {
+                "answers": 0.0178,
+                "elsewhere": 0.0378,
+                "different_case": 0.1318,
+                "unrelated": 0.8126
+              }
+            },
+            {
+              "index": 4,
+              "id": "DEV-5",
+              "action": "skip",
+              "reason": "unrelated",
+              "relevance_score": 0.0086,
+              "document_score": 0.0388,
+              "levels": {
+                "answers": 0.0086,
+                "elsewhere": 0.0302,
+                "different_case": 0.0944,
+                "unrelated": 0.8667
+              }
+            },
+            {
+              "index": 6,
+              "id": "DEV-7",
+              "action": "skip",
+              "reason": "unrelated",
+              "relevance_score": 0.0066,
+              "document_score": 0.0202,
+              "levels": {
+                "answers": 0.0066,
+                "elsewhere": 0.0137,
+                "different_case": 0.1092,
+                "unrelated": 0.8706
+              }
+            },
+            {
+              "index": 5,
+              "id": "DEV-6",
+              "action": "skip",
+              "reason": "unrelated",
+              "relevance_score": 0.003,
+              "document_score": 0.0086,
+              "levels": {
+                "answers": 0.003,
+                "elsewhere": 0.0056,
+                "different_case": 0.0304,
+                "unrelated": 0.9609
+              }
+            },
+            {
+              "index": 1,
+              "id": "DEV-2",
+              "action": "skip",
+              "reason": "unrelated",
+              "relevance_score": 0.0027,
+              "document_score": 0.0075,
+              "levels": {
+                "answers": 0.0027,
+                "elsewhere": 0.0048,
+                "different_case": 0.0372,
+                "unrelated": 0.9553
+              }
+            }
+          ],
+          "usage": {
+            "input_tokens": 453
+          },
+          "timing": {
+            "total_ms": 38,
+            "rerank_ms": 37,
+            "questions_ms": 0,
+            "model_ms": 32,
+            "engine": {
+              "rows": 1789,
+              "branches": 8,
+              "forwards": 1,
+              "bins": 1,
+              "bucket_rows": 2048,
+              "long": 0,
+              "total_ms": 32,
+              "build_ms": 0,
+              "doc_ms": 0,
+              "forward_ms": 31,
+              "state_ms": 0,
+              "logits_ms": 0,
+              "state_chars": 0,
+              "row_buckets": "big",
+              "shared_opening_tokens": 80
+            }
+          }
+        }
+      },
+      {
+        "id": "script-risk",
+        "title": "Inspect the script",
+        "endpoint": "script",
+        "status": "ok",
+        "outcome": "pass",
+        "summary": "The script reads as benign administration, with a malicious score of 0.01.",
+        "effect": "No objection, but this alone does not authorise the action.",
+        "score": 0.005395378842733223,
+        "spans": [],
+        "modelMs": 35.31152,
+        "credits": 2,
+        "raw": {
+          "model": "clocked-1.0",
+          "malicious": 0.005395378842733223,
+          "suspicious": 0.0228,
+          "verdict": "benign",
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "category": "benign administration",
+          "categories": {
+            "benign administration": 0.9772313947073341,
+            "security blinding or EDR evasion": 0.002524306153026055,
+            "credential theft or memory dumping": 0.0036505620057326305,
+            "unauthorized persistence or access expansion": 0.001647001385029887,
+            "network reconnaissance or tunneling": 0.0017777211189468488,
+            "forensic destruction or anti-forensics": 0.002970181438982445,
+            "ransomware or data destruction": 0.002394499457791505,
+            "obfuscated or in-memory payload": 0.002574484739729981,
+            "unsafe download or remote code execution": 0.00242972581504585,
+            "data exfiltration": 0.0028001231783806872
+          },
+          "severity": "none",
+          "severity_expected": 1.471,
+          "severities": {
+            "none": 0.5857836561833223,
+            "low": 0.38678092326210284,
+            "medium": 0.008268030151296006,
+            "high": 0.00912194352036596,
+            "critical": 0.010045446882912845
+          },
+          "evidence": [],
+          "timing": {
+            "read_ms": 38,
+            "total_ms": 38
+          }
+        }
+      },
+      {
+        "id": "targets",
+        "title": "Find targets and amounts",
+        "endpoint": "extract",
+        "status": "ok",
+        "outcome": "pass",
+        "summary": "Found 0 host(s), 1 path(s), 0 recipient(s) and no amount.",
+        "effect": "Every host found is on the allowlist.",
+        "spans": [],
+        "modelMs": 75.942307,
+        "credits": 4,
+        "raw": {
+          "model": "clocked-1.0",
+          "fields": {
+            "hosts": {
+              "value": [],
+              "items": [],
+              "confidence": 1
+            },
+            "file_paths": {
+              "value": [
+                "~/src/acme/checkout"
+              ],
+              "items": [
+                {
+                  "value": "~/src/acme/checkout",
+                  "start": 3,
+                  "end": 22,
+                  "confidence": 0.9999999952675669,
+                  "p_verify": 0.9999999952675669
+                }
+              ],
+              "confidence": 0.9999999952675669
+            },
+            "recipients": {
+              "value": [],
+              "items": [],
+              "confidence": 1
+            },
+            "amount": {
+              "value": null,
+              "confidence": 1,
+              "normalized": null,
+              "normalization_reason": "not_parseable_or_not_stated"
+            }
+          },
+          "timing": {
+            "read_ms": 75,
+            "forwards": {
+              "fields": [
+                6,
+                0
+              ]
+            },
+            "stages": {
+              "fields": {
+                "reader": "recognition",
+                "doc": 0,
+                "branches": 1,
+                "generate": 63,
+                "locate": 0,
+                "verify": 9,
+                "assemble": 0
+              }
+            },
+            "total_ms": 75,
+            "server_ms": 78
+          }
+        }
+      },
+      {
+        "id": "scope",
+        "title": "Decide whether this is in scope",
+        "endpoint": "decide",
+        "status": "ok",
+        "outcome": "pass",
+        "summary": "Reads as a read-only action, easy to undo, in scope 0.98, clause violation 0.01.",
+        "effect": "In scope, and no applicable clause objects.",
+        "score": 0.9805,
+        "spans": [],
+        "modelMs": 57.769249,
+        "credits": 3,
+        "raw": {
+          "model": "clocked-1.0",
+          "answers": {
+            "in_scope": {
+              "type": "noul",
+              "noul": 0.9805
+            },
+            "violates_clause": {
+              "type": "noul",
+              "noul": 0.0122
+            },
+            "needs_approval": {
+              "type": "noul",
+              "noul": 0.0175
+            },
+            "reversibility": {
+              "type": "score",
+              "score": 1.9755,
+              "legend": {
+                "0": "irreversible",
+                "1": "hard to undo",
+                "2": "easy to undo"
+              },
+              "probabilities": {
+                "0": 0.0089,
+                "1": 0.0067,
+                "2": 0.9844
+              },
+              "confidence": 0.9766
+            },
+            "action_class": {
+              "type": "choice",
+              "choice": "read-only",
+              "probabilities": {
+                "read-only": 0.9155,
+                "code change": 0.0185,
+                "data change": 0.0075,
+                "outbound message": 0.0064,
+                "payment": 0.0055,
+                "deployment": 0.0062,
+                "security control": 0.0067,
+                "not established": 0.0337
+              },
+              "confidence": 0.9034
+            }
+          },
+          "usage": {
+            "input_tokens": 182,
+            "output_tokens": 17
+          }
+        }
+      },
+      {
+        "id": "outbound-pii",
+        "title": "Protect personal data going out",
+        "endpoint": "pii",
+        "status": "skipped",
+        "outcome": "info",
+        "summary": "This action sends nothing out, so personal data was not checked.",
+        "effect": "No effect on the verdict.",
+        "spans": []
+      },
+      {
+        "id": "review-card",
+        "title": "Prepare the review card",
+        "endpoint": "fill",
+        "status": "skipped",
+        "outcome": "info",
+        "summary": "Nothing needs a person, so no review card was prepared.",
+        "effect": "No effect on the verdict.",
+        "spans": []
+      }
+    ],
+    "totals": {
+      "modelMs": 201.947522,
+      "credits": 11,
+      "failedChecks": 0
+    }
+  },
+  "replies": {
+    "4a3295eabbe52059655ec23f5b17287b3ad219f3712c3cbeb7ccbd691f198c77": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "results": [
+          {
+            "index": 3,
+            "id": "DEV-4",
+            "action": "use",
+            "relevance_score": 0.9344,
+            "document_score": 0.9503,
+            "levels": {
+              "answers": 0.9344,
+              "elsewhere": 0.0159,
+              "different_case": 0.0172,
+              "unrelated": 0.0326
+            }
+          },
+          {
+            "index": 0,
+            "id": "DEV-1",
+            "action": "use",
+            "relevance_score": 0.8556,
+            "document_score": 0.8768,
+            "levels": {
+              "answers": 0.8556,
+              "elsewhere": 0.0212,
+              "different_case": 0.0268,
+              "unrelated": 0.0964
+            }
+          },
+          {
+            "index": 7,
+            "id": "DEV-8",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0179,
+            "document_score": 0.0595,
+            "levels": {
+              "answers": 0.0179,
+              "elsewhere": 0.0416,
+              "different_case": 0.0828,
+              "unrelated": 0.8577
+            }
+          },
+          {
+            "index": 2,
+            "id": "DEV-3",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0178,
+            "document_score": 0.0556,
+            "levels": {
+              "answers": 0.0178,
+              "elsewhere": 0.0378,
+              "different_case": 0.1318,
+              "unrelated": 0.8126
+            }
+          },
+          {
+            "index": 4,
+            "id": "DEV-5",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0086,
+            "document_score": 0.0388,
+            "levels": {
+              "answers": 0.0086,
+              "elsewhere": 0.0302,
+              "different_case": 0.0944,
+              "unrelated": 0.8667
+            }
+          },
+          {
+            "index": 6,
+            "id": "DEV-7",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0066,
+            "document_score": 0.0202,
+            "levels": {
+              "answers": 0.0066,
+              "elsewhere": 0.0137,
+              "different_case": 0.1092,
+              "unrelated": 0.8706
+            }
+          },
+          {
+            "index": 5,
+            "id": "DEV-6",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.003,
+            "document_score": 0.0086,
+            "levels": {
+              "answers": 0.003,
+              "elsewhere": 0.0056,
+              "different_case": 0.0304,
+              "unrelated": 0.9609
+            }
+          },
+          {
+            "index": 1,
+            "id": "DEV-2",
+            "action": "skip",
+            "reason": "unrelated",
+            "relevance_score": 0.0027,
+            "document_score": 0.0075,
+            "levels": {
+              "answers": 0.0027,
+              "elsewhere": 0.0048,
+              "different_case": 0.0372,
+              "unrelated": 0.9553
+            }
+          }
+        ],
+        "usage": {
+          "input_tokens": 453
+        },
+        "timing": {
+          "total_ms": 38,
+          "rerank_ms": 37,
+          "questions_ms": 0,
+          "model_ms": 32,
+          "engine": {
+            "rows": 1789,
+            "branches": 8,
+            "forwards": 1,
+            "bins": 1,
+            "bucket_rows": 2048,
+            "long": 0,
+            "total_ms": 32,
+            "build_ms": 0,
+            "doc_ms": 0,
+            "forward_ms": 31,
+            "state_ms": 0,
+            "logits_ms": 0,
+            "state_chars": 0,
+            "row_buckets": "big",
+            "shared_opening_tokens": 80
+          }
+        }
+      },
+      "modelMs": 32.924446,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "c2b7240169a0c8691b785f38d4308f0c37823ba3e4ddcc0396e72ebde84d9db4": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "malicious": 0.005395378842733223,
+        "suspicious": 0.0228,
+        "verdict": "benign",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "category": "benign administration",
+        "categories": {
+          "benign administration": 0.9772313947073341,
+          "security blinding or EDR evasion": 0.002524306153026055,
+          "credential theft or memory dumping": 0.0036505620057326305,
+          "unauthorized persistence or access expansion": 0.001647001385029887,
+          "network reconnaissance or tunneling": 0.0017777211189468488,
+          "forensic destruction or anti-forensics": 0.002970181438982445,
+          "ransomware or data destruction": 0.002394499457791505,
+          "obfuscated or in-memory payload": 0.002574484739729981,
+          "unsafe download or remote code execution": 0.00242972581504585,
+          "data exfiltration": 0.0028001231783806872
+        },
+        "severity": "none",
+        "severity_expected": 1.471,
+        "severities": {
+          "none": 0.5857836561833223,
+          "low": 0.38678092326210284,
+          "medium": 0.008268030151296006,
+          "high": 0.00912194352036596,
+          "critical": 0.010045446882912845
+        },
+        "evidence": [],
+        "timing": {
+          "read_ms": 38,
+          "total_ms": 38
+        }
+      },
+      "modelMs": 35.31152,
+      "credits": 2,
+      "costUsd": 0.000398
+    },
+    "e5f8e1173fd7780dd03898a8fe2194640ece7f824e1c08db3de318550f66a89c": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "fields": {
+          "hosts": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "file_paths": {
+            "value": [
+              "~/src/acme/checkout"
+            ],
+            "items": [
+              {
+                "value": "~/src/acme/checkout",
+                "start": 3,
+                "end": 22,
+                "confidence": 0.9999999952675669,
+                "p_verify": 0.9999999952675669
+              }
+            ],
+            "confidence": 0.9999999952675669
+          },
+          "recipients": {
+            "value": [],
+            "items": [],
+            "confidence": 1
+          },
+          "amount": {
+            "value": null,
+            "confidence": 1,
+            "normalized": null,
+            "normalization_reason": "not_parseable_or_not_stated"
+          }
+        },
+        "timing": {
+          "read_ms": 75,
+          "forwards": {
+            "fields": [
+              6,
+              0
+            ]
+          },
+          "stages": {
+            "fields": {
+              "reader": "recognition",
+              "doc": 0,
+              "branches": 1,
+              "generate": 63,
+              "locate": 0,
+              "verify": 9,
+              "assemble": 0
+            }
+          },
+          "total_ms": 75,
+          "server_ms": 78
+        }
+      },
+      "modelMs": 75.942307,
+      "credits": 4,
+      "costUsd": 0.000797
+    },
+    "266931845f356dcf0774c68b75e784d1a09e5d66339b44ba73780873c304dd77": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "in_scope": {
+            "type": "noul",
+            "noul": 0.9805
+          },
+          "violates_clause": {
+            "type": "noul",
+            "noul": 0.0122
+          },
+          "needs_approval": {
+            "type": "noul",
+            "noul": 0.0175
+          },
+          "reversibility": {
+            "type": "score",
+            "score": 1.9755,
+            "legend": {
+              "0": "irreversible",
+              "1": "hard to undo",
+              "2": "easy to undo"
+            },
+            "probabilities": {
+              "0": 0.0089,
+              "1": 0.0067,
+              "2": 0.9844
+            },
+            "confidence": 0.9766
+          },
+          "action_class": {
+            "type": "choice",
+            "choice": "read-only",
+            "probabilities": {
+              "read-only": 0.9155,
+              "code change": 0.0185,
+              "data change": 0.0075,
+              "outbound message": 0.0064,
+              "payment": 0.0055,
+              "deployment": 0.0062,
+              "security control": 0.0067,
+              "not established": 0.0337
+            },
+            "confidence": 0.9034
+          }
+        },
+        "usage": {
+          "input_tokens": 182,
+          "output_tokens": 17
+        }
+      },
+      "modelMs": 57.769249,
+      "credits": 3,
+      "costUsd": 0.000598
+    }
+  }
+}

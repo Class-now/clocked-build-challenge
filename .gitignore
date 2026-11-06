@@ -10,3 +10,4 @@ coverage/
 *.log
 .gatehouse/
 .vercel
+.tmp-exp/

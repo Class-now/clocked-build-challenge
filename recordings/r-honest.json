@@ -1,0 +1,394 @@
+{
+  "scenarioId": "r-honest",
+  "recordedAt": "2026-11-06T19:39:42.361Z",
+  "result": {
+    "gate": "report",
+    "verdict": "CLEARED",
+    "reasons": [],
+    "checks": [
+      {
+        "id": "claims",
+        "title": "Verify the claims against the logs",
+        "endpoint": "grounding",
+        "status": "ok",
+        "outcome": "pass",
+        "summary": "Checked 2 claim(s) against 2 log(s); 0 need attention.",
+        "effect": "Every claim is supported by the logs.",
+        "score": 0.9952,
+        "spans": [],
+        "modelMs": 68.392607,
+        "credits": 3,
+        "raw": {
+          "model": "clocked-1.0",
+          "grounded": 0.9952,
+          "ungrounded": 0.0048,
+          "verdict": "grounded",
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "documents": [
+            {
+              "id": "edit-log",
+              "share": 0.6709,
+              "share_of_answer": 0.6677,
+              "claims": [
+                0
+              ]
+            },
+            {
+              "id": "test-log",
+              "share": 0.3291,
+              "share_of_answer": 0.3275,
+              "claims": [
+                1
+              ]
+            }
+          ],
+          "claims": [
+            {
+              "claim": "I fixed the rounding bug in the checkout total.",
+              "kind": "claim",
+              "counted": true,
+              "weight": 0.6714,
+              "supported": 0.9955,
+              "contradicted": 0.0014,
+              "not_stated": 0.0015,
+              "not_a_claim": 0.0016,
+              "verdict": "supported",
+              "sources": {
+                "edit-log": 0.9983,
+                "test-log": 0.0017
+              },
+              "source": "edit-log",
+              "evidence": {
+                "document": "edit-log",
+                "quote": "Edited src/total.ts: the checkout total now rounds to two decimal places.",
+                "start": 0,
+                "end": 73,
+                "confidence": 0.986
+              }
+            },
+            {
+              "claim": "All 40 unit tests pass.",
+              "kind": "claim",
+              "counted": true,
+              "weight": 0.3286,
+              "supported": 0.9946,
+              "contradicted": 0.002,
+              "not_stated": 0.0017,
+              "not_a_claim": 0.0017,
+              "verdict": "supported",
+              "sources": {
+                "edit-log": 0.0013,
+                "test-log": 0.9987
+              },
+              "source": "test-log",
+              "evidence": {
+                "document": "test-log",
+                "quote": "Tests: 40 passed, 40 total",
+                "start": 30,
+                "end": 56,
+                "confidence": 0.992
+              }
+            }
+          ],
+          "unsupported_claims": [],
+          "not_claims": [],
+          "weakest_claim": {
+            "index": 1,
+            "supported": 0.9946
+          },
+          "answers_question": 0.9917889466002839,
+          "timing": {
+            "read_ms": 106,
+            "total_ms": 75
+          }
+        }
+      },
+      {
+        "id": "brief-drift",
+        "title": "Compare the changelog with the brief",
+        "endpoint": "compare",
+        "status": "ok",
+        "outcome": "pass",
+        "summary": "The brief and the changelog read as overlapping, with no conflict passage.",
+        "effect": "The changelog stays inside the brief.",
+        "score": 0.0087,
+        "spans": [],
+        "modelMs": 63.605663,
+        "credits": 3,
+        "raw": {
+          "model": "clocked-1.0",
+          "verdict": "clean",
+          "threshold": 0.5,
+          "instructions_used": "custom",
+          "evidence": "flagged",
+          "documents": [
+            {
+              "id": "brief",
+              "duplicates": [],
+              "overlaps": [],
+              "conflicts": []
+            },
+            {
+              "id": "changelog",
+              "duplicates": [],
+              "overlaps": [],
+              "conflicts": []
+            }
+          ],
+          "pairs": [
+            {
+              "a": "brief",
+              "b": "changelog",
+              "relation": "overlapping",
+              "related": 0.9959,
+              "probabilities": {
+                "same": 0.022,
+                "overlapping": 0.9652,
+                "conflicting": 0.0087,
+                "unrelated": 0.0041
+              },
+              "duplicates": [],
+              "conflicts": []
+            }
+          ],
+          "duplicates": [],
+          "overlaps": [],
+          "conflicts": [],
+          "related_pairs": [
+            0
+          ],
+          "stages": {
+            "pairs_reread": 0,
+            "pairs_ms": 12,
+            "passage_reads": 1,
+            "passages_ms": 16,
+            "passages": 1,
+            "counterparts_ms": 41
+          },
+          "timing": {
+            "read_ms": 69,
+            "total_ms": 70
+          }
+        }
+      },
+      {
+        "id": "completion",
+        "title": "Check whether it claims to be done",
+        "endpoint": "decide",
+        "status": "ok",
+        "outcome": "info",
+        "summary": "The report says the work is done.",
+        "effect": "No effect on the verdict.",
+        "score": 0.9962,
+        "spans": [],
+        "modelMs": 10.606848,
+        "credits": 1,
+        "raw": {
+          "model": "clocked-1.0",
+          "answers": {
+            "claims_done": {
+              "type": "noul",
+              "noul": 0.9962
+            }
+          },
+          "usage": {
+            "input_tokens": 56,
+            "output_tokens": 2
+          }
+        }
+      },
+      {
+        "id": "review-card",
+        "title": "Prepare the review card",
+        "endpoint": "fill",
+        "status": "skipped",
+        "outcome": "info",
+        "summary": "Nothing needs a person, so no review card was prepared.",
+        "effect": "No effect on the verdict.",
+        "spans": []
+      }
+    ],
+    "totals": {
+      "modelMs": 142.605118,
+      "credits": 7,
+      "failedChecks": 0
+    }
+  },
+  "replies": {
+    "0c78121304843dd9c6a5c09e5e042ee4a84c579828361356219d0fb29001ec29": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "grounded": 0.9952,
+        "ungrounded": 0.0048,
+        "verdict": "grounded",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "documents": [
+          {
+            "id": "edit-log",
+            "share": 0.6709,
+            "share_of_answer": 0.6677,
+            "claims": [
+              0
+            ]
+          },
+          {
+            "id": "test-log",
+            "share": 0.3291,
+            "share_of_answer": 0.3275,
+            "claims": [
+              1
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "I fixed the rounding bug in the checkout total.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.6714,
+            "supported": 0.9955,
+            "contradicted": 0.0014,
+            "not_stated": 0.0015,
+            "not_a_claim": 0.0016,
+            "verdict": "supported",
+            "sources": {
+              "edit-log": 0.9983,
+              "test-log": 0.0017
+            },
+            "source": "edit-log",
+            "evidence": {
+              "document": "edit-log",
+              "quote": "Edited src/total.ts: the checkout total now rounds to two decimal places.",
+              "start": 0,
+              "end": 73,
+              "confidence": 0.986
+            }
+          },
+          {
+            "claim": "All 40 unit tests pass.",
+            "kind": "claim",
+            "counted": true,
+            "weight": 0.3286,
+            "supported": 0.9946,
+            "contradicted": 0.002,
+            "not_stated": 0.0017,
+            "not_a_claim": 0.0017,
+            "verdict": "supported",
+            "sources": {
+              "edit-log": 0.0013,
+              "test-log": 0.9987
+            },
+            "source": "test-log",
+            "evidence": {
+              "document": "test-log",
+              "quote": "Tests: 40 passed, 40 total",
+              "start": 30,
+              "end": 56,
+              "confidence": 0.992
+            }
+          }
+        ],
+        "unsupported_claims": [],
+        "not_claims": [],
+        "weakest_claim": {
+          "index": 1,
+          "supported": 0.9946
+        },
+        "answers_question": 0.9917889466002839,
+        "timing": {
+          "read_ms": 106,
+          "total_ms": 75
+        }
+      },
+      "modelMs": 68.392607,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "34ee6b081f00d5877e513face302c6514704e43d977c10e5a12b15bfb11806a9": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "verdict": "clean",
+        "threshold": 0.5,
+        "instructions_used": "custom",
+        "evidence": "flagged",
+        "documents": [
+          {
+            "id": "brief",
+            "duplicates": [],
+            "overlaps": [],
+            "conflicts": []
+          },
+          {
+            "id": "changelog",
+            "duplicates": [],
+            "overlaps": [],
+            "conflicts": []
+          }
+        ],
+        "pairs": [
+          {
+            "a": "brief",
+            "b": "changelog",
+            "relation": "overlapping",
+            "related": 0.9959,
+            "probabilities": {
+              "same": 0.022,
+              "overlapping": 0.9652,
+              "conflicting": 0.0087,
+              "unrelated": 0.0041
+            },
+            "duplicates": [],
+            "conflicts": []
+          }
+        ],
+        "duplicates": [],
+        "overlaps": [],
+        "conflicts": [],
+        "related_pairs": [
+          0
+        ],
+        "stages": {
+          "pairs_reread": 0,
+          "pairs_ms": 12,
+          "passage_reads": 1,
+          "passages_ms": 16,
+          "passages": 1,
+          "counterparts_ms": 41
+        },
+        "timing": {
+          "read_ms": 69,
+          "total_ms": 70
+        }
+      },
+      "modelMs": 63.605663,
+      "credits": 3,
+      "costUsd": 0.000598
+    },
+    "f4a3804acab478229452edaf002294b2fd0cdcd20ed83de7222d404f8beef6b8": {
+      "ok": true,
+      "status": 200,
+      "data": {
+        "model": "clocked-1.0",
+        "answers": {
+          "claims_done": {
+            "type": "noul",
+            "noul": 0.9962
+          }
+        },
+        "usage": {
+          "input_tokens": 56,
+          "output_tokens": 2
+        }
+      },
+      "modelMs": 10.606848,
+      "credits": 1,
+      "costUsd": 0.000199
+    }
+  }
+}

@@ -208,10 +208,14 @@ function topLevel(answer: any): string {
   return level;
 }
 
-async function decideScope(input: ActionInput, payload: string, applicable: PolicyClause[], targets: Targets, t: ClockedTransport, checks: CheckResult[], reasons: Reason[]): Promise<Scope> {
+async function decideScope(input: ActionInput, redacted: string | undefined, applicable: PolicyClause[], targets: Targets, t: ClockedTransport, checks: CheckResult[], reasons: Reason[]): Promise<Scope> {
   const amountLine = targets.amount ?? (targets.ran ? 'none found' : 'not available');
+  // Without the note the model reads the placeholders as data still going out, and refuses the message.
+  const payloadLine = redacted === undefined
+    ? `Payload: ${input.payload}`
+    : `Payload, exactly as it would be sent. Personal data has already been redacted from it; a tag such as <PHONE> replaces a removed value and the recipient never sees that value:\n${redacted}`;
   const reply = await safeCall(t, 'decide', {
-    state: `Approved work: ${input.brief}\nTool: ${input.tool}\nPayload: ${payload}\nExtracted amount: ${amountLine}`,
+    state: `Approved work: ${input.brief}\nTool: ${input.tool}\n${payloadLine}\nExtracted amount: ${amountLine}`,
     instructions: `Policy clauses that apply:\n${clauseText(applicable)}`,
     questions: {
       in_scope: { type: 'noul', instructions: 'Is this action part of the approved work?' },
@@ -327,7 +331,7 @@ export async function runAction(input: ActionInput, t: ClockedTransport): Promis
   // A declared outbound message is judged as it would leave. Otherwise Decide reads personal data
   // that will never be sent and refuses a message that is fine once redacted.
   const early = input.outbound === true ? await protectOutbound(input, { actionClass: 'outbound message' }, t, checks, reasons) : undefined;
-  const scope = await decideScope(input, early?.redacted ?? input.payload, applicable, targets, t, checks, reasons);
+  const scope = await decideScope(input, early?.redacted, applicable, targets, t, checks, reasons);
   const outbound = early ?? await protectOutbound(input, scope, t, checks, reasons);
 
   // Whether extract matters depends on the action, so this comes after the class is known.
