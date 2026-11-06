@@ -137,7 +137,7 @@ Every check fills `summary` and `effect` in plain words, for example effect "Ref
 
 Fixtures: `src/core/__fixtures__/` hold hand-written replies shaped like the recorded responses in `.refs`. Tests use a small fake transport keyed by endpoint.
 
-- [ ] Tests cover: harmless test run cleared, security-blinding script refused with evidence span, unlisted host held, money over a clause limit held or refused, outbound text with PII cleared with redaction and `forwardText` without the raw value, each endpoint failing once (fail closed), uncertain score held
+- [x] Tests cover: harmless test run cleared, security-blinding script refused with evidence span, unlisted host held, money over a clause limit held or refused, outbound text with PII cleared with redaction and `forwardText` without the raw value, each endpoint failing once (fail closed), uncertain score held
 
 ### Task 5: The content and report gates
 
