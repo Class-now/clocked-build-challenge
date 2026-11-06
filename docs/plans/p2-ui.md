@@ -28,7 +28,7 @@ Vite + React + TypeScript in `web/`, built to `dist/`. Vercel Node functions in 
   - Results strip `raw` fields whose content would duplicate personal data the visitor did not type: keep `raw` for scenarios, drop it for custom input.
   - Never logs input text or the key.
 
-- [ ] Handler tests cover each status above with a fake transport
+- [x] Handler tests cover each status above with a fake transport
 
 ### Task 2: The desk
 
