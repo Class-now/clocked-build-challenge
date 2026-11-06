@@ -185,7 +185,7 @@ Exactly these 14 scenarios:
 
 `src/core/index.ts` exports `runGate(scenarioLike, transport)` dispatching on gate.
 
-- [ ] A test asserts the 14 ids, that each input validates, and that no scenario contains a real-looking secret (`sk-`, `ghp_`, 16-digit numbers other than the well-known test card 4111 1111 1111 1111)
-- [ ] `scripts/record.ts` (run with `npm run record`) reads `CLOCKED_API_KEY`, runs every scenario through `recordingTransport(liveTransport)`, writes `recordings/<id>.json` containing `{ scenarioId, recordedAt, result: GateResult, replies }`, prints a table of id, expected, actual, credits, and exits non-zero only on a transport failure. Without a key it prints a clear message and exits 1. It is not run in this plan.
+- [x] A test asserts the 14 ids, that each input validates, and that no scenario contains a real-looking secret (`sk-`, `ghp_`, 16-digit numbers other than the well-known test card 4111 1111 1111 1111)
+- [x] `scripts/record.ts` (run with `npm run record`) reads `CLOCKED_API_KEY`, runs every scenario through `recordingTransport(liveTransport)`, writes `recordings/<id>.json` containing `{ scenarioId, recordedAt, result: GateResult, replies }`, prints a table of id, expected, actual, credits, and exits non-zero only on a transport failure. Without a key it prints a clear message and exits 1. It is not run in this plan.
 
 Do NOT implement: web UI, HTTP API, hooks, deployment, README. Other lanes own them.
