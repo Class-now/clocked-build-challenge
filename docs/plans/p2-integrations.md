@@ -33,7 +33,7 @@ Gatehouse is a checkpoint between an AI agent and the real world, built on Clock
 
 `gatehouse demo` plays a recorded fictional agent session through the gates with `replayTransport` from `recordings/*.json`. It works with no API key and prints a readable terminal transcript: what the agent tried, each verdict and reason. If recordings are missing it says to run `npm run record`. Add it as `npm run demo`.
 
-- [ ] Test with a fixture recording covering output and the missing-recordings message
+- [x] Test with a fixture recording covering output and the missing-recordings message
 
 ### Task 3: Eval harness
 

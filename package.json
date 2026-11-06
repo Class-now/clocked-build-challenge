@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "record": "tsx scripts/record.ts",
-    "gatehouse": "tsx src/cli/gatehouse.ts"
+    "gatehouse": "tsx src/cli/gatehouse.ts",
+    "demo": "tsx src/cli/gatehouse.ts demo"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

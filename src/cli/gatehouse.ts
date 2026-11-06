@@ -1,10 +1,11 @@
 // The Gatehouse command line. See README.md.
 import { existsSync, readFileSync, realpathSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { liveTransport, runGate, validateGateRequest } from '../core/index.js';
 import type { ClockedTransport, GateKind, GateRequest, GateResult } from '../core/index.js';
 import { resolvePolicy } from './config.js';
+import { playDemo } from './demo.js';
 import { HOOK_DEADLINE_MS, hookPostTool, hookPreTool, hookStop } from './hooks.js';
 import type { HookContext, HookOutput } from './hooks.js';
 
@@ -13,6 +14,7 @@ export const EXIT = { cleared: 0, usage: 2, held: 10, refused: 20 } as const;
 const USAGE = `Usage:
   gatehouse check <action|content|report> --file input.json [--json]
   gatehouse hook <pre-tool|post-tool|stop>     reads a Claude Code hook event from stdin
+  gatehouse demo                               plays a recorded session, with no API key
 
 Exit codes for check: 0 cleared, 10 held, 20 refused, 2 usage error.`;
 
@@ -30,6 +32,8 @@ export interface CliDeps {
   transport?: ClockedTransport;
   now?(): Date;
   deadlineMs?: number;
+  /** Where `gatehouse demo` finds recordings. Defaults to recordings/ in this repository. */
+  recordingsDir?: string;
 }
 
 function apiKey(env: CliDeps['env'], cwd: string): string | null {
@@ -132,10 +136,23 @@ async function hook(args: string[], deps: CliDeps): Promise<number> {
   return 0;
 }
 
+const DEFAULT_RECORDINGS = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'recordings');
+
+async function demo(deps: CliDeps): Promise<number> {
+  const played = await playDemo(deps.recordingsDir ?? DEFAULT_RECORDINGS);
+  if ('error' in played) {
+    deps.stderr(played.error);
+    return 1;
+  }
+  deps.stdout(played.text);
+  return 0;
+}
+
 export async function runCli(argv: string[], deps: CliDeps): Promise<number> {
   const [command, ...rest] = argv;
   if (command === 'check') return check(rest, deps);
   if (command === 'hook') return hook(rest, deps);
+  if (command === 'demo' && rest.length === 0) return demo(deps);
   deps.stderr(USAGE);
   return EXIT.usage;
 }
