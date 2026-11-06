@@ -1,0 +1,21 @@
+{
+  "name": "gatehouse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A checkpoint between an AI agent and the real world, built on the Clocked APIs.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "record": "tsx scripts/record.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

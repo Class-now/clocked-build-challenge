@@ -86,8 +86,8 @@ export interface ContentInput { source: string; text: string; policy: PolicyPack
 export interface ReportInput { brief: string; report: string; toolLogs: { id: string; text: string }[]; changelog: string; policy: PolicyPack; }
 ```
 
-- [ ] `npm run typecheck` and `npm test` pass (a trivial test is fine at this stage)
-- [ ] `src/core/types.ts` exports every type above
+- [x] `npm run typecheck` and `npm test` pass (a trivial test is fine at this stage)
+- [x] `src/core/types.ts` exports every type above
 
 ### Task 2: Clocked client with recording and replay
 
@@ -106,7 +106,7 @@ export function callKey(c: ClockedCall): string; // sha256 of endpoint + stable 
 - `liveTransport` runs one request at a time through an in-process promise queue, generates one `Idempotency-Key` per logical call and reuses it on retry, retries 429 and 5xx and network errors with bounded exponential backoff (at most `maxRetries`, default 4, honouring `Retry-After` when present), and has a 60 s timeout per attempt. It never throws: a failure returns `{ok:false,status,error}`. It never logs the key.
 - `replayTransport` returns `{ok:false,status:0,error:'no recording'}` on a miss.
 
-- [ ] Tests with a fake fetch cover: success with cost headers, 429 then success using the same idempotency key, 402 without retry, timeout or network failure returning `ok:false`, serial execution (two concurrent calls never overlap), record then replay round trip
+- [x] Tests with a fake fetch cover: success with cost headers, 429 then success using the same idempotency key, 402 without retry, timeout or network failure returning `ok:false`, serial execution (two concurrent calls never overlap), record then replay round trip
 
 ### Task 3: Verdict policy (pure)
 
@@ -120,7 +120,7 @@ Rules:
 - **Missing data**: a network or payment action where no target or amount could be extracted holds.
 - A benign verdict from a detector does not authorise anything by itself: an action also needs in-scope and a passing allowlist.
 
-- [ ] Table-driven tests cover each rule, including a boundary test at each threshold
+- [x] Table-driven tests cover each rule, including a boundary test at each threshold
 
 ### Task 4: The action gate
 
@@ -137,7 +137,7 @@ Every check fills `summary` and `effect` in plain words, for example effect "Ref
 
 Fixtures: `src/core/__fixtures__/` hold hand-written replies shaped like the recorded responses in `.refs`. Tests use a small fake transport keyed by endpoint.
 
-- [ ] Tests cover: harmless test run cleared, security-blinding script refused with evidence span, unlisted host held, money over a clause limit held or refused, outbound text with PII cleared with redaction and `forwardText` without the raw value, each endpoint failing once (fail closed), uncertain score held
+- [x] Tests cover: harmless test run cleared, security-blinding script refused with evidence span, unlisted host held, money over a clause limit held or refused, outbound text with PII cleared with redaction and `forwardText` without the raw value, each endpoint failing once (fail closed), uncertain score held
 
 ### Task 5: The content and report gates
 
@@ -152,7 +152,7 @@ Fixtures: `src/core/__fixtures__/` hold hand-written replies shaped like the rec
 - **decide** (`completion`): state = brief + report; question `claims_done` (noul). If the report claims completion while a contradicted claim exists, the reason says so.
 - **fill** (`review-card`): as in the action gate, on `HELD` or `REFUSED`.
 
-- [ ] Tests cover: honest report cleared, "all tests passed" against a failing log refused with both spans, scope drift caught, unsupported claim held, injected content refused with no `forwardText`, quoted attack in a benign security article cleared, PII in content replaced, pipeline step failure fails closed
+- [x] Tests cover: honest report cleared, "all tests passed" against a failing log refused with both spans, scope drift caught, unsupported claim held, injected content refused with no `forwardText`, quoted attack in a benign security article cleared, PII in content replaced, pipeline step failure fails closed
 
 ### Task 6: Scenarios
 
@@ -185,7 +185,7 @@ Exactly these 14 scenarios:
 
 `src/core/index.ts` exports `runGate(scenarioLike, transport)` dispatching on gate.
 
-- [ ] A test asserts the 14 ids, that each input validates, and that no scenario contains a real-looking secret (`sk-`, `ghp_`, 16-digit numbers other than the well-known test card 4111 1111 1111 1111)
-- [ ] `scripts/record.ts` (run with `npm run record`) reads `CLOCKED_API_KEY`, runs every scenario through `recordingTransport(liveTransport)`, writes `recordings/<id>.json` containing `{ scenarioId, recordedAt, result: GateResult, replies }`, prints a table of id, expected, actual, credits, and exits non-zero only on a transport failure. Without a key it prints a clear message and exits 1. It is not run in this plan.
+- [x] A test asserts the 14 ids, that each input validates, and that no scenario contains a real-looking secret (`sk-`, `ghp_`, 16-digit numbers other than the well-known test card 4111 1111 1111 1111)
+- [x] `scripts/record.ts` (run with `npm run record`) reads `CLOCKED_API_KEY`, runs every scenario through `recordingTransport(liveTransport)`, writes `recordings/<id>.json` containing `{ scenarioId, recordedAt, result: GateResult, replies }`, prints a table of id, expected, actual, credits, and exits non-zero only on a transport failure. Without a key it prints a clear message and exits 1. It is not run in this plan.
 
 Do NOT implement: web UI, HTTP API, hooks, deployment, README. Other lanes own them.
