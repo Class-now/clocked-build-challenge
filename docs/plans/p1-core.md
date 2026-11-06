@@ -86,8 +86,8 @@ export interface ContentInput { source: string; text: string; policy: PolicyPack
 export interface ReportInput { brief: string; report: string; toolLogs: { id: string; text: string }[]; changelog: string; policy: PolicyPack; }
 ```
 
-- [ ] `npm run typecheck` and `npm test` pass (a trivial test is fine at this stage)
-- [ ] `src/core/types.ts` exports every type above
+- [x] `npm run typecheck` and `npm test` pass (a trivial test is fine at this stage)
+- [x] `src/core/types.ts` exports every type above
 
 ### Task 2: Clocked client with recording and replay
 
