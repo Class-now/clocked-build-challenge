@@ -5,7 +5,7 @@
   "description": "A checkpoint between an AI agent and the real world, built on the Clocked APIs.",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "typecheck": "tsc --noEmit && tsc --noEmit -p web/tsconfig.json",

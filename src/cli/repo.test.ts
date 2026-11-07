@@ -58,9 +58,9 @@ describe('repository files', () => {
     expect(read('LICENSE')).toContain('Copyright (c) 2026 Gatehouse contributors');
   });
 
-  it('runs CI on Node 20 with no secret', () => {
+  it('runs CI on Node 22 with no secret', () => {
     const ci = read('.github/workflows/ci.yml');
-    expect(ci).toContain('node-version: 20');
+    expect(ci).toContain('node-version: 22');
     expect(ci).toContain('npm run typecheck');
     expect(ci).toContain('npm test');
     expect(ci).not.toContain('secrets.');
